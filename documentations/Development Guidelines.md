@@ -53,3 +53,22 @@ This guideline might be revised on demand.
  
 - project-avalache-meeting-details (google doc)  
   - [click here](https://docs.google.com/document/d/10L72o-qWSt5bQCInW-Q8m7COkIul0dFd-7WDEdRXo0Q/edit)
+
+## Git commend  
+  - [Chinese tutoral](https://backlog.com/git-tutorial/tw/stepup/stepup2_1.html) || [English tutoral](https://git-scm.com/docs/git-branch)  
+- branch  
+  - Build `branch` in shell `$ git branch <branchname>`  
+  - Check `branch` in shell `$ git branch`  
+  - Goto `branchname` input `$ git checkout <branch>`
+
+
+- push
+  - `$ git add myfile.txt`  
+  - `$ git commit -m "commit"`
+  - `$ git push`
+
+- pull
+  - `$ git pull`
+
+## Task lists  
+- [ ] High-Level Design Document  deadline: 23:59:59, 18th Feb, 2022 (Friday).
