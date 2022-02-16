@@ -42,3 +42,14 @@ This guideline might be revised on demand.
 - Keep your work done small and keep commiting for better version control.
 - Make pull request(s) to the main. Let other people review your code before merging to the main (as well as solving conflicts).
 - If you screwed up anything, undo the commit. You can do this by following [this guide](https://stackoverflow.com/a/31937298). (Caution: Think twice before doing it!)
+
+## Meeting detail
+- Weeking meeting  
+  - (UTC +8) 2100 - 2200  
+  - [click here](https://meet.google.com/vhp-obty-xme)  
+
+- Jam board: 3100 Project Weekly Meeting! (vhp-obty-xme - 2022年1月21日)
+  - [click here](https://jamboard.google.com/1PJB25xDlft9iBMjHkKCqzYu3oeu-JygIuYVNXBHqP5Y/viewer?f=1)
+ 
+- project-avalache-meeting-details (google doc)  
+  - [click here](https://docs.google.com/document/d/10L72o-qWSt5bQCInW-Q8m7COkIul0dFd-7WDEdRXo0Q/edit)
