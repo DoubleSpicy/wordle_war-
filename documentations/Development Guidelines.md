@@ -42,3 +42,19 @@ This guideline might be revised on demand.
 - Keep your work done small and keep commiting for better version control.
 - Make pull request(s) to the main. Let other people review your code before merging to the main (as well as solving conflicts).
 - If you screwed up anything, undo the commit. You can do this by following [this guide](https://stackoverflow.com/a/31937298). (Caution: Think twice before doing it!)
+
+## Git commend  
+  - [Chinese tutoral](https://backlog.com/git-tutorial/tw/stepup/stepup2_1.html) || [English tutoral](https://git-scm.com/docs/git-branch)  
+- branch  
+  - Build `branch` in shell `$ git branch <branchname>`  
+  - Check `branch` in shell `$ git branch`  
+  - Goto `branchname` input `$ git checkout <branch>`
+
+
+- push
+  - `$ git add myfile.txt`  
+  - `$ git commit -m "commit"`
+  - `$ git push`
+
+- pull
+  - `$ git pull`
