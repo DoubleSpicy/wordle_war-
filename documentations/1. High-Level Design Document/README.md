@@ -1,7 +1,7 @@
 # High-Level Design Document
 status | Phase Deliverables  | Weightings | Durations | 	Due Date |  
 |------| -------------  | ------------- |------------- | ------------- |
-| [x] | 1. High-Level Design Document| 10%  | 	5 weeks	| 18/02 (23:59:59pm)
+| - [x] | 1. High-Level Design Document| 10%  | 	5 weeks	| 18/02 (23:59:59pm)
 
 
 - link:
