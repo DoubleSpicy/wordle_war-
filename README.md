@@ -27,7 +27,7 @@ To contribute in this project, please take a look at the following pages:
   - [click here](https://meet.google.com/vhp-obty-xme)  
 
 - Jam board: 3100 Project Weekly Meeting! (vhp-obty-xme - 2022年1月21日)
-  - [click here](https://jamboard.google.com/1PJB25xDlft9iBMjHkKCqzYu3oeu-JygIuYVNXBHqP5Y/viewer?f=1)
+  - [click here](https://jamboard.google.com/d/1PJB25xDlft9iBMjHkKCqzYu3oeu-JygIuYVNXBHqP5Y)
  
 - project-avalache-meeting-details (google doc)  
   - [click here](https://docs.google.com/document/d/10L72o-qWSt5bQCInW-Q8m7COkIul0dFd-7WDEdRXo0Q/edit)
