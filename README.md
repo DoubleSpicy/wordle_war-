@@ -15,7 +15,7 @@ To contribute in this project, please take a look at the following pages:
 
 |status | Phase Deliverables  | Weightings | Durations | 	Due Date |  
 |------------- | -------------  | ------------- |------------- | ------------- |
-| ✅ | 1. High-Level Design Document| 10%  | 	5 weeks	| 18/02 (23:59:59pm)|
+| ✅ | [1. High-Level Design Document](https://github.com/DoubleSpicy/avalanche/tree/main/documentations/1.%20High-Level%20Design%20Document)| 10%  | 	5 weeks	| 18/02 (23:59:59pm)|
 | :clock9: |2. Initial Code	| 5%	|4 weeks	| 04/03 (23:59:59pm)
 | ⬜ |3. Completed Code and Demo |	60%	 |4 weeks |	 Code: 12/04 (23:59:59pm) \Project Demo Day: 13/04 & 14/04
 | ⬜ |4. Final Report and Commented Code	|25%	|2 weeks	|29/04 (23:59:59pm)
