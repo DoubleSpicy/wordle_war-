@@ -146,7 +146,7 @@ body{
 
   /* https://www.w3schools.com/howto/howto_js_password_validation.asp */
 /* Style all input fields */
-input {
+form-control {
 	width: 50%;
 	padding: 5px;
 	border: 1px solid rgb(255, 255, 255);
@@ -157,13 +157,13 @@ input {
   }
   
   /* Style the submit button */
-  input[type=submit] {
+  form-control[type=submit] {
 	background-color: #04AA6D;
 	color: white;
   }
   
   /* Style the container for inputs */
-  .container {
+  .form-control {
 	background-color: #f1f1f1;
 	padding: 5px;
   }
@@ -171,8 +171,8 @@ input {
   /* The message box is shown when the user clicks on the password field */
   #message {
 	display:none;
-	background: #f1f1f1;
-	color: #000;
+	background: #f1f1f100;
+	color: rgba(0, 0, 0, 0);
 	position: relative;
 	padding: 20px;
 	margin-top: 10px;
@@ -204,3 +204,61 @@ input {
 	left: -35px;
 	content: "✖";
   }
+
+/* tire */
+
+.guess-grid {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	flex-grow: 1;
+	grid-template-columns: repeat(9, 4em);
+	grid-template-rows: repeat(6, 4em);
+	gap: .25em;
+	margin-bottom: 1em;
+  }
+
+.tile {
+  font-size: 2em;
+  color:  #d8d8d8;
+  border: .05em solid hsl(240, 2%, 23%);
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: transform 250ms linear;
+
+  animation-name: FlipOut;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+  }
+
+  .active {
+    background-color: hsl(240, 2%, 23%);
+
+  }
+  .correct {
+    background-color: #6aaa64;
+
+  }
+  .wrong {
+    background-color: #c9b458;
+
+  }
+  
+  @keyframes FlipOut {
+    0% {
+      transform: rotateX(0);
+    }
+  25% {
+      transform: rotateX(-90deg);
+    }
+  50% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
