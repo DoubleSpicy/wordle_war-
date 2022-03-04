@@ -215,6 +215,7 @@ form-control {
 	grid-template-columns: repeat(9, 4em);
 	grid-template-rows: repeat(6, 4em);
 	gap: .25em;
+	
 	margin-bottom: 1em;
   }
 
@@ -229,7 +230,7 @@ form-control {
   align-items: center;
   user-select: none;
   transition: transform 250ms linear;
-
+  box-shadow: 5px 2px 2px rgb(255, 166, 0);
   animation-name: FlipOut;
   animation-duration: 500ms;
   animation-timing-function: ease-in;
