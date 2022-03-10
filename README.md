@@ -9,10 +9,11 @@ cd server
 npm i --save-dev nodemon
 npm i express socket.io randomcolor
 ```
-##Starting the server
+## Starting the server
 ```bash
 npm run dev
 ```
+Then open your browser to localhost:8080
 
 ## tab 1 click a grid
 ![image](https://user-images.githubusercontent.com/49149560/157738857-e2beb694-8cf0-4237-9414-283db9b0e0b8.png)
