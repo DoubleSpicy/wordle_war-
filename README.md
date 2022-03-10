@@ -20,8 +20,8 @@ npm run dev
 ## tab 2 showing the grid placed by tab 1
 ![image](https://user-images.githubusercontent.com/49149560/157739019-25ce6e72-82a2-4c01-beca-fd03bc148cd0.png)
 
-###The grid placed by the corresponding tab user itself will always be displayed in green
-##Tab 1
+The grid placed by the corresponding tab user itself will always be displayed in green
+## Tab 1
 ![image](https://user-images.githubusercontent.com/49149560/157739421-61ba2e2e-56c3-4faf-a0e7-5441049f78ba.png)
-##Tab 2
+## Tab 2
 ![image](https://user-images.githubusercontent.com/49149560/157739475-43c243ac-f643-444a-aec5-0a2b5524d051.png)
