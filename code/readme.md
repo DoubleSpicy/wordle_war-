@@ -1,2 +1,2 @@
-"TMP" is for exercise
-not the product
+make TMP file  
+add wordle_war
