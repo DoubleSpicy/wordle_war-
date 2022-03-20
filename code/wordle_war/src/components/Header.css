@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+  --height: 51px;
+  position: relative;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-primary);
+  width: 100%;
+  height: var(--height);
+  position: relative;
+}
+.icons {
+  height: 100%;
+  z-index: 1;
+  display: flex;
+}
+h1 {
+  position: absolute;
+  width: 100%;
+  font-size: var(--fs-large);
+  cursor: pointer;
+  text-align: center;
+}
+
+.logo {
+  text-align: center;
+}
+
+.header_left{
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+
+.header_right{
+  position: relative;
+  display: flex;
+  align-items: center;
+}

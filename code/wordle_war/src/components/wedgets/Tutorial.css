@@ -1,0 +1,17 @@
+div {
+    margin: 14px 0;
+}
+
+.PopUp{
+    position: fixed;
+    left:0%;
+    top: 5%;
+    width: 100%;
+    background-color: var(--background-color);
+    border-radius: 1em;
+    font-size: 14px;
+    font-style: normal;
+ 
+    overflow-y: scroll;
+}
+
