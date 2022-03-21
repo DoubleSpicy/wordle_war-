@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Login from './components/login/Login';
 import Missing from './components/Missing';
 import Register from './components/login/Register';
+import Reset from './components/login/ResetPw';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="*" element={<Missing />} />
         <Route path="register" element={<Register />} />
+        <Route path="reset" element={<Reset />} />
       </Routes>
       <hr></hr>
       <div> cuhk </div>
