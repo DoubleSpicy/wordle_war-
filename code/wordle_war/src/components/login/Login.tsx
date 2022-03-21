@@ -44,8 +44,12 @@ function Login1() {
                                 type="password"
                                 id="password"
                                 required
+                            
                             />
                             <br />
+                            <Link to="/reset">Forgot Password?</Link>
+                            <br />
+                            
                             <button className='clickButton'>Sign In</button>
                             <div className="persistCheck">
                                 <input
