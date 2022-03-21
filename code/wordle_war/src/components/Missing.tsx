@@ -5,7 +5,7 @@ import './Header.css'
 
 function Missing() {
     return (
-        <div className='notFound404'>
+        <div className="flex justify-center mb-1 mt-4">
             <Cell value="你"
                 isRevealing={true}
                 isCompleted={true}

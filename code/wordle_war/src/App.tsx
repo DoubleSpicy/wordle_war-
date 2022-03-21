@@ -6,19 +6,22 @@ import Login from './components/login/Login';
 import Missing from './components/Missing';
 import Register from './components/login/Register';
 import Reset from './components/login/ResetPw';
+import Teleport from './components/Teleport';
+import Dashboard from './components/dashboard/Dashboard';
 
 function App() {
   return (
     <Router>
       <nav>
         <Header />
-
       </nav>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Teleport />} />
+        <Route path="login" element={<Login />} />
         <Route path="*" element={<Missing />} />
         <Route path="register" element={<Register />} />
         <Route path="reset" element={<Reset />} />
+        <Route path="Dashboard" element={<Dashboard />} />
       </Routes>
       <hr></hr>
       <div> cuhk </div>

@@ -2,6 +2,8 @@ import './Header.css';
 import React, { useState } from 'react'
 import Tutorial from './wedgets/Tutorial'
 import Setting from './wedgets/Setting'
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 
 import useDarkMode from "use-dark-mode";
 
@@ -27,7 +29,7 @@ export default function Header() {
 
                 </div>
                 <div className="header_logo" >
-                    wordle_CUHK
+                    <Link to="/"> wordle_CUHK</Link> 
                 </div>
                 <div className="header_right">
                     <div>
