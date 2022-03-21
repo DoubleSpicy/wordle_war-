@@ -5,12 +5,17 @@
 :root .light-mode{
   --background-color: #fff;
   --color: #333;
+  --block_color : rgb(60, 250, 139);
+  --clickingButton: rgb(247, 238, 120);
 }
 
 :root .dark-mode{
   --background-color: #18181b;
   --color: #aaaaaa;
+  --block_color : rgb(1, 54, 23);
+  --clickingButton: rgb(105, 99, 11);
 }
+
 
 
 
@@ -18,6 +23,7 @@ body {
   background-color: var(--background-color);
   color: var(--color);
   transition: background-color 0.3s ease;
+  text-align: center 
 }
 
 
@@ -60,3 +66,4 @@ body {
     transform: rotate(360deg);
   }
 }
+

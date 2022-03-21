@@ -1,8 +1,14 @@
 div {
-    margin: 14px 0;
+  margin: 14px 0;
 }
 
-.PopUp{
+.PopUp {
+  width: 100%;
+  top: 5%;
+  text-align: center;
+  background-color: var(--background-color);
+
+  /* margin-top: 20px;
     position: fixed;
     left:0%;
     top: 5%;
@@ -10,8 +16,5 @@ div {
     background-color: var(--background-color);
     border-radius: 1em;
     font-size: 14px;
-    font-style: normal;
- 
-    overflow-y: scroll;
+    font-style: normal; */
 }
-

@@ -1,0 +1,44 @@
+
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+
+  }
+  
+  .column-1 {
+  
+    width: 50%;
+    padding: 10px;
+    margin: auto;
+    
+
+  }
+  /* Clear floats after the columns */
+  .row:after {
+ 
+    content: "";
+    position: center;
+    display: table;
+    clear: both
+  }
+
+  
+
+  .box {
+    display: relative;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 2rem;
+    line-height: 1.5em;
+    background-color: var(--block_color);
+  }
+  
+
+  .clickButton {
+  padding: 0.5rem;
+ 
+  background-color: var(--clickingButton);
+}
