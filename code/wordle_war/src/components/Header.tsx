@@ -17,65 +17,65 @@ export default function Header() {
 
     return (
         <div>
-            <nav>
-                <header>
 
-                    <div className="header_left" >
-                        <button onClick={() => toggleShowInfo(!showInfo)}>
-                            info: {showInfo ? "show1" : "hide1"}
-                        </button>
+            <header>
 
-                        {showInfo && (
-                            <div className="PopUp">
-                                {" "}
-                                <button
-                                    className="popup-x"
-                                    onClick={() => toggleShowInfo(!showInfo)}
-                                >
-                                    X
-                                </button>
-                                <Tutorial />
-                            </div>
-                        )}
+                <div className="header_left" >
+                    <button onClick={() => toggleShowInfo(!showInfo)}>
+                        info: {showInfo ? "show1" : "hide1"}
+                    </button>
+
+                </div>
+                <div className="header_logo" >
+                    wordle_CUHK
+                </div>
+                <div className="header_right">
+                    <div>
+                        {" "}
+                        <button onClick={() => toggleShowdarkMode(!showdarkMode)}>
+                            {showdarkMode ? <p onClick={darkMode.enable}>☀</p> : <p onClick={darkMode.disable}>☾</p>}
+
+                        </button>{" "}
+
+
                     </div>
-                    <div className="header_logo" >
-                        wordle_CUHK
+                    <div>
+                        {" "}
+                        <button onClick={() => toggleShowSetting(!showSetting)}>
+                            info: {showSetting ? "setting" : "setting=C"}
+                        </button>{" "}
+
                     </div>
-                    <div className="header_right">
-                        <div>
-                            {" "}
-                            <button onClick={() => toggleShowdarkMode(!showdarkMode)}>
-                                {showdarkMode ? <p onClick={darkMode.enable}>☀</p> : <p onClick={darkMode.disable}>☾</p>}
-
-                            </button>{" "}
-
-
-                        </div>
-                        <div>
-                            {" "}
-                            <button onClick={() => toggleShowSetting(!showSetting)}>
-                                info: {showSetting ? "setting" : "setting=C"}
-                            </button>{" "}
-
-                            {showSetting && (
-                                <div className="PopUp">
-                                    {" "}
-                                    <button
-                                        className="popup-x"
-                                        onClick={() => toggleShowSetting(!showSetting)}
-                                    >
-                                        X
-                                    </button>
-                                    <Setting />
-
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </header>
-
-            </nav>
+                </div>
+            </header>
             <hr></hr>
+            {showInfo && (
+                <div className="PopUp">
+                    {" "}
+                    <button
+                        className="popup-x"
+                        onClick={() => toggleShowInfo(!showInfo)}
+                    >
+                        X
+                    </button>
+                    <Tutorial />
+                </div>
+            )}
+
+            {showSetting && (
+                <div className="PopUp">
+                    {" "}
+                    <button
+                        className="popup-x"
+                        onClick={() => toggleShowSetting(!showSetting)}
+                    >
+                        X
+                    </button>
+                    <Setting />
+
+                </div>
+            )}
+
         </div>
     )
 }
