@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './Setting.css';
 
 
 export default function Setting() {

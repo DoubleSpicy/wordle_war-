@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import './Tutorial.css';
-import { Cell } from '../board/Tile';
+
+
 
 export default function Tutorial() {
 
@@ -17,7 +17,7 @@ export default function Tutorial() {
 
             <div><strong>Examples</strong></div>
             <hr></hr>
-            <div className="flex justify-center mb-1 mt-4">
+            {/* <div className="flex justify-center mb-1 mt-4">
                 <Cell
                     isRevealing={true}
                     isCompleted={true}
@@ -28,12 +28,12 @@ export default function Tutorial() {
                 <Cell value="A" />
                 <Cell value="R" />
                 <Cell value="Y" />
-            </div>
+            </div> */}
             <div>The letter <strong>W</strong> is in the word and in the correct spot.</div>
 
 
             <hr></hr>
-            <div className="flex justify-center mb-1 mt-4">
+            {/* <div className="flex justify-center mb-1 mt-4">
                 <Cell value="P" />
                 <Cell value="I" />
                 <Cell
@@ -44,16 +44,16 @@ export default function Tutorial() {
                 />
                 <Cell value="O" />
                 <Cell value="T" />
-            </div>
+            </div> */}
             <div>The letter <strong>I</strong> is in the word but in the wrong spot.</div>
             <hr></hr>
-            <div className="flex justify-center mb-1 mt-4">
+            {/* <div className="flex justify-center mb-1 mt-4">
                 <Cell value="V" />
                 <Cell value="A" />
                 <Cell value="G" />
                 <Cell isRevealing={true} isCompleted={true} value="U" status="absent" />
                 <Cell value="E" />
-            </div>
+            </div> */}
             <div>The letter <strong>U</strong> is not in the word in any spot.</div>
             <hr></hr>
             by CSCI3100 B2 with additional modes and features.in Typescript by
