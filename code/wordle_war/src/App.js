@@ -3,7 +3,7 @@ import Login from './components/auth/Login';
 import Home from './components/home/Home';
 import Header from './components/Header';
 import RequireAuth from './components/auth/RequireAuth';
-import Game from './components/game/GameIndex'
+import Game from './components/game/Game';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
