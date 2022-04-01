@@ -48,6 +48,10 @@ html, body {
 	color: #000;
 }
 
+.dark-mode .block {
+	color: #FFFFFF;
+}
+
 .filled {
 	animation: zoom 0.4s;
 }
@@ -75,14 +79,14 @@ html, body {
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 }
-.dark .block {
+.dark-mode-mode .block {
 	color: #fff;
 }
 .block .front {
 	border-radius: 3px;
 	border: 2px solid #d3d6da;
 }
-.dark .block .front {
+.dark-mode .block .front {
 	border-radius: 3px;
 	border-color: #3F3F46;
 }
@@ -90,7 +94,7 @@ html, body {
 	border-radius: 3px;
 	border-color: #999;
 }
-.dark .block.filled .front {
+.dark-mode .block.filled .front {
 	border-radius: 3px;
 	border-color: #52525B;
 }
