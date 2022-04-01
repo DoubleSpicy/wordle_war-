@@ -25,6 +25,12 @@ const Home = () => {
                 <br />
                 <Link to="/game">Go to the game page</Link>
                 <br />
+                <Link to="/login">Go to login</Link>
+                <br />
+                <Link to="/register">Go to register</Link>
+                <br />
+                <Link to="/reset">Go to reset password</Link>
+                <br />
                 <div className="flexGrow">
                     <button onClick={logout}>Sign Out</button>
                 </div>

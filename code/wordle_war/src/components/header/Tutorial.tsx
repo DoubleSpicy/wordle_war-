@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import Game from '../game/Game'
 
 
 export default function Tutorial() {
