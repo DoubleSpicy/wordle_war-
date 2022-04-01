@@ -21,8 +21,9 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="game" element={<Game />} />
         <Route path="reset" element={<ResetPW />} />
+
         <Route element={<RequireAuth />} >
-          <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         </Route>
 
       </Routes>
