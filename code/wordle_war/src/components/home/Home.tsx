@@ -1,6 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useContext } from "react";
 // import AuthContext from "../context/AuthProvider";
+import Button from '@mui/material/Button';
 
 const Home = () => {
     // const { setAuth } = useContext(AuthContext);
@@ -13,6 +14,20 @@ const Home = () => {
         navigate('/login');
     }
 
+    const buttonList = [
+        {link:"/setting",title:"Setting"},
+        {link:"/game",title:"Game"},
+        {link:"/login",title:"Login"},
+        {link:"/register",title:"Register"},
+        {link:"/reset",title:"Reset Password"},
+    ];
+
+    const navTo = async (link:string) => {
+        navigate(link);
+    }
+
+    
+
     return (
 
         <div className="center">
@@ -21,10 +36,32 @@ const Home = () => {
                 <br />
                 <p>You are logged in!</p>
                 <br />
-                <Link to="/setting">Go to the setting</Link>
+                <div id="home-menu">
+                {
+                    buttonList.map((button, index) => 
+                        (  
+                        <div key={index} className="home-menu-btn" onClick={()=> navTo(button.link)}>
+                            <span>{button.title}</span>
+                        </div>
+                        )
+                    )
+                }  
+                </div>
+                <div className="flexGrow">
+                    <Button onClick={logout}>Sign Out</Button>
+                </div>
+            </section>
+        </div>
+
+    )
+}
+
+/*
+<Link to="/setting">Go to the setting</Link>
                 <br />
                 <Link to="/game">Go to the game page</Link>
                 <br />
+<<<<<<< Updated upstream
                 <div className="flexGrow">
                     <button onClick={logout}>Sign Out</button>
                 </div>
@@ -34,4 +71,13 @@ const Home = () => {
     )
 }
 
+=======
+                <Link to="/login">Go to login</Link>
+                <br />
+                <Link to="/register">Go to register</Link>
+                <br />
+                <Link to="/reset">Go to reset password</Link>
+                <br />
+*/
+>>>>>>> Stashed changes
 export default Home

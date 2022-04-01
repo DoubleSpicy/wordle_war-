@@ -49,6 +49,7 @@ export default class Game extends React.Component {
 		}
 		
 		//recevice the keyboard keydown to play game
+		EventBus.remove("CustomKeyDown");
 		EventBus.on("CustomKeyDown", (data) =>{
 			//console.log("CustomKeyDown",data);
 			if(data){

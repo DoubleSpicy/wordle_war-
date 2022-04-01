@@ -64,7 +64,7 @@ const Login = () => {
     }
 
     return (
-        <div class="center">
+        <div className="center">
             {success ? (
                 <section>
                     <h1>You are logged in!</h1>
