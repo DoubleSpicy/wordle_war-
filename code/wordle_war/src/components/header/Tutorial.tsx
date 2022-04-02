@@ -1,9 +1,4 @@
 import React, { useState } from 'react'
-<<<<<<< Updated upstream
-
-=======
-import Game from '../game/game'
->>>>>>> Stashed changes
 
 
 export default function Tutorial() {
