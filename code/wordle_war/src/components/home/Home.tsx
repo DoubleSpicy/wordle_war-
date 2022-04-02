@@ -61,17 +61,6 @@ const Home = () => {
                 <br />
                 <Link to="/game">Go to the game page</Link>
                 <br />
-<<<<<<< Updated upstream
-                <div className="flexGrow">
-                    <button onClick={logout}>Sign Out</button>
-                </div>
-            </section>
-        </div>
-
-    )
-}
-
-=======
                 <Link to="/login">Go to login</Link>
                 <br />
                 <Link to="/register">Go to register</Link>
@@ -79,5 +68,4 @@ const Home = () => {
                 <Link to="/reset">Go to reset password</Link>
                 <br />
 */
->>>>>>> Stashed changes
 export default Home
