@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Game from '../game/Game'
 import classnames from "classnames";
 
 
