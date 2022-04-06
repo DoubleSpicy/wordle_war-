@@ -5,7 +5,7 @@ import Home from './components/home/Home';
 import Header from './components/Header';
 import RequireAuth from './components/auth/RequireAuth';
 import Game from './components/game/Game';
-
+import Tile from './components/game/Tile';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="game" element={<Game />} />
         <Route path="reset" element={<ResetPW />} />
+        <Route path="tile" element={<Tile />} />
 
         <Route element={<RequireAuth />} >
         <Route path="/" element={<Home />} />
