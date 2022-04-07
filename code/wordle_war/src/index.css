@@ -55,7 +55,7 @@ header {
   position: relative;
 }
 
-.light-mode header {
+.light-mode header,  .light-mode .footer{
   box-shadow: 0 0 11px 3px #d1d1d1;
 }
 
@@ -267,6 +267,10 @@ a:visited {
   .home-menu-btn:nth-child(even){
     float: right;
   }*/
+}
+
+.footer{
+  border-bottom: 1px solid var(--border-primary);
 }
 
 @keyframes swing-top-fwd {
