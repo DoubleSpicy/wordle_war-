@@ -25,8 +25,7 @@ function App() {
         </Route>
 
       </Routes>
-      <hr></hr>
-      <div> cuhk </div>
+      <div className='footer'> cuhk </div>
     </Router>
 
   );
