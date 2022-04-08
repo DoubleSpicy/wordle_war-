@@ -14,8 +14,8 @@ const Register = () => {
     const userRef = useRef();
     const errRef = useRef();
 
-    
-    const [userEmail, setEmail] = useState('');
+
+    const [email, setEmail] = useState('');
     const [validEmail, setValidEmail] = useState(false);
     const [emailFocus, setEmailFocus] = useState(false);
 
@@ -39,8 +39,8 @@ const Register = () => {
     }, [])
 
     useEffect(() => {
-        setValidEmail(EMAIL_REGEX.test(userEmail));
-    }, [userEmail])
+        setValidEmail(EMAIL_REGEX.test(email));
+    }, [email])
 
 
     useEffect(() => {
@@ -54,7 +54,7 @@ const Register = () => {
 
     useEffect(() => {
         setErrMsg('');
-    }, [userEmail, user, pwd, matchPwd])
+    }, [email, user, pwd, matchPwd])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -65,33 +65,33 @@ const Register = () => {
             setErrMsg("Invalid Entry");
             return;
         }
-        console.log({userEmail, user, pwd })
-        // try {
-        //     const response = await axios.post(REGISTER_URL,
-        //         JSON.stringify({ user, pwd }),
-        //         {
-        //             headers: { 'Content-Type': 'application/json' },
-        //             withCredentials: true
-        //         }
-        //     );
-        //     // TODO: remove console.logs before deployment
-        //     console.log(JSON.stringify(response?.data));
-        //     console.log(JSON.stringify(response))
-        //     setSuccess(true);
-        //     //clear state and controlled inputs
-        //     setUser('');
-        //     setPwd('');
-        //     setMatchPwd('');
-        // } catch (err) {
-        //     if (!err?.response) {
-        //         setErrMsg('No Server Response');
-        //     } else if (err.response?.status === 409) {
-        //         setErrMsg('Username Taken');
-        //     } else {
-        //         setErrMsg('Registration Failed')
-        //     }
-        //     errRef.current.focus();
-        // }
+        console.log({ email, user, pwd })
+        try {
+            const response = await axios.post(REGISTER_URL,
+                JSON.stringify({ email, user, pwd }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
+            );
+            // TODO: remove console.logs before deployment
+            console.log(JSON.stringify(response?.data));
+            console.log(JSON.stringify(response))
+            setSuccess(true);
+            //clear state and controlled inputs
+            setUser('');
+            setPwd('');
+            setMatchPwd('');
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg('No Server Response');
+            } else if (err.response?.status === 409) {
+                setErrMsg('Username Taken');
+            } else {
+                setErrMsg('Registration Failed')
+            }
+            errRef.current.focus();
+        }
     }
 
     return (
@@ -109,15 +109,15 @@ const Register = () => {
                     <h1>Register</h1>
                     <form onSubmit={handleSubmit}>
 
-                    <label htmlFor="userEmail">
+                        <label htmlFor="userEmail">
                             Email:
                             <FontAwesomeIcon icon={faCheck} className={validEmail ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validEmail || !userEmail ? "hide" : "invalid"} />
+                            <FontAwesomeIcon icon={faTimes} className={validEmail || !email ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="email"
                             id="userEmail"
-                            value={userEmail}
+                            value={email}
                             autoComplete="off"
                             required
                             onChange={(e) => setEmail(e.target.value)}

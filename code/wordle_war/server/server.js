@@ -3,12 +3,23 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
-const cors = require('cors');
-const corsOptions = require('./config/corsOptions');
+// const cors = require('cors');
+// const corsOptions = require('./config/corsOptions');
 const PORT = process.env.PORT || 3500;
 const { sendConfirmationEmail, sendResetPasswordEmail } = require('./controllers/mailer');
-// Cross Origin Resource Sharing
+
+
+const cors = require('cors');
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
 app.use(cors(corsOptions));
+
+
+// // Cross Origin Resource Sharing
+// app.use(cors(corsOptions));
 
 // built-in middleware to handle urlencoded form data
 app.use(express.urlencoded({ extended: false }));
