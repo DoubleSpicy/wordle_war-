@@ -4,6 +4,8 @@ import './game.css';
 import Keyboard from './keyboard';
 import EventBus from './eventbus';
 import AllWords from './word';
+import CircularProgress from '@mui/material/CircularProgress';
+import Server from '../../Server';
 
 //call it using <MGame />
 
@@ -26,8 +28,8 @@ class Block extends React.Component {
 }
 
 //Whole game
-export default class MGame extends React.Component {
-
+class MGame extends React.Component {
+	
 	constructor(props) {
 		super(props);
 		//it should be modify by not-fixed data
@@ -84,6 +86,7 @@ export default class MGame extends React.Component {
 		});
 
 	}
+
 
 	//update one block letter and state using row and col
 	updateBlock(row,col,letter,state){
@@ -150,6 +153,11 @@ export default class MGame extends React.Component {
 	}
     return (
 		<div id="game-container">
+			<div className='Loading'>
+				Prepare Room
+				<CircularProgress />
+			</div>
+			
 			<div id="board-container">
 				<div id="board">
 					{blocks}
@@ -159,4 +167,30 @@ export default class MGame extends React.Component {
 		</div>
     );
   }
+}
+
+export default class GameRoom extends React.Component {
+
+	constructor(props) {
+		super(props);
+		//it should be modify by not-fixed data
+		this.state = {
+			loading:true,
+		};
+		console.log(Server);
+		console.log(Server.ws);
+	}
+
+	render() {
+		return (
+			<div>
+				<Server />
+				{this.state.loading && <div className='Loading'>
+					Prepare Room
+					<CircularProgress />
+				</div>}
+				{!this.state.loading && <MGame /> }
+			</div>
+		);
+	}
 }

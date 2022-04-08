@@ -6,7 +6,7 @@ class Server {
 		 origins:["http://127.0.0.1:3000"]};
 		const io = require('socket.io')(server, options);
 
-		this.players = {};
+		this.onlineplayers = {};
 
 		io.on('connection', socket => {
 			//經過連線後在 console 中印出訊息
@@ -16,21 +16,33 @@ class Server {
 				//回傳 message 給發送訊息的 Client
 				console.log('received2: '+message);
 				socket.emit('getMessage', message)
-			})
+			});
 			
 			socket.on('playGame', message => {
 				//回傳 message 給發送訊息的 Client
 				console.log('A player start game');
 				console.log('received2: '+message);
-				this.players[0] = (message);
-				console.log('player: '+this.players);
+				this.onlineplayers[this.onlineplayers.length] = (message);
+				console.log('player: '+this.onlineplayers);
 				socket.emit('getMessage', message)
-			})
-		})
+			});
+			
+			socket.on('disconnect', () => {
+				console.log("A player disconnect");
+            });
+		});
 
 		server.listen(4000, () => {
 		  console.log('listening on *:4000');
 		});
+	}
+	
+	checkOnlinePlayers(){
+		return (this.onlineplayers.length > 1);
+	}
+	
+	createRoom(currentPlayer){
+		
 	}
 }
 
