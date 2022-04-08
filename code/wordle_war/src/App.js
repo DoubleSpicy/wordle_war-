@@ -7,6 +7,7 @@ import RequireAuth from './components/auth/RequireAuth';
 import Game from './components/game/game';
 import Tile from './components/game/Tile';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import GameRoom from './components/game/multi/multiGame';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="game" element={<Game />} />
+        <Route path="mgame" element={<GameRoom />} />
         <Route path="reset" element={<ResetPW />} />
         <Route path="tile" element={<Tile />} />
 
