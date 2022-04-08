@@ -24,7 +24,7 @@ const handleActivate = async (req, res) => {
             path.join(__dirname, '..', 'model', 'users.json'),
             JSON.stringify(usersDB.users)
         );
-
+            //del
         const index = pendingUsersDB.users.findIndex(a => a.id === hash)
         if (index < 0) { throw new Error('Item not found!') };
  

@@ -34,16 +34,16 @@ const handleNewUser = async (req, res) => {
         const newUser = { "id": gen_id, "email": email, "username": user, "password": hashedPwd };
         pendingUsersDB.setUsers([...pendingUsersDB.users, newUser])
 
-        usersDB.setUsers([...usersDB.users, newUser]);
-        await fsPromises.writeFile(
-            path.join(__dirname, '..', 'model', 'users.json'),
-            JSON.stringify(usersDB.users)
-        );
+        // usersDB.setUsers([...usersDB.users, newUser]);
+        // await fsPromises.writeFile(
+        //     path.join(__dirname, '..', 'model', 'users.json'),
+        //     JSON.stringify(usersDB.users)
+        // );
         await fsPromises.writeFile(
             path.join(__dirname, '..', 'model', 'pending-users.json'),
             JSON.stringify(pendingUsersDB.users)
         );
-        console.log(usersDB.users);
+        // console.log(usersDB.users);
         console.log(pendingUsersDB.users);
 
         res.status(201).json({ 'success': `New user ${user} created! ${email}` });

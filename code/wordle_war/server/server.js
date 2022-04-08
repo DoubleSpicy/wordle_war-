@@ -27,6 +27,8 @@ app.get('/test', (req, res) => {
 app.use('/register', require('./routes/register'));
 app.use('/login', require('./routes/login'));
 app.use('/activate', require('./routes/activate'));
+app.use('/resetPassword', require('./routes/reset-password'));
+app.use('/resetPassword/confirmation', require('./routes/resetPasswordConfirmation'));
 
 app.use('/auth', require('./routes/auth'));
 
