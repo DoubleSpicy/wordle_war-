@@ -4,10 +4,12 @@ import Home from './components/home/Home';
 import Header from './components/Header';
 import RequireAuth from './components/auth/RequireAuth';
 import Game from './components/game/game';
-
+import Tile from './components/game/Tile';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
+
+
 
   return (
 
