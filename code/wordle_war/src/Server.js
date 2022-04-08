@@ -40,4 +40,4 @@ const Server = () => {
     )
 }
 
-export default Server;
+export default { Server, Server.ws };

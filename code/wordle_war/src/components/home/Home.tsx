@@ -17,6 +17,7 @@ const Home = () => {
     const buttonList = [
         {link:"/setting",title:"Setting"},
         {link:"/game",title:"Game"},
+        {link:"/mgame",title:"MGame"},
         {link:"/login",title:"Login"},
         {link:"/register",title:"Register"},
         {link:"/reset",title:"Reset Password"},

@@ -33,6 +33,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log({ user, pwd })
+        
         // try {
         //     const response = await axios.post(LOGIN_URL,
         //         JSON.stringify({ user, pwd }),
