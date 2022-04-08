@@ -4,5 +4,11 @@
         "email": "test.gmail.com",
         "username": "admin",
         "password": "$2b$10$uxMHnPThEEUJY.EkpBiC9uAcKWUa7xtFtCaMAFgGA56VnaL/OKGPa"
+    },
+    {
+        "id": "_6v3crx8x7",
+        "email": "asd@asd.com",
+        "username": "adssmin",
+        "password": "$2b$10$D9UmKrZnq1MQMslE3BHWwu5aqNt5nMHS17jC3zbiXuhF0amniFcSS"
     }
 ]
