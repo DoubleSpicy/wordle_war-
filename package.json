@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A tiny gamedev demo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node_modules/.bin/nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Multiplayer",
+    "Game",
+    "Socket.IO"
+  ],
+  "author": "IvanWong",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "randomcolor": "^0.5.4",
+    "socket.io": "^4.4.1",
+    "socket.io-client": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
