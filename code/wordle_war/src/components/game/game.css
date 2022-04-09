@@ -26,20 +26,48 @@ html, body {
   #board,#opponent{
 	  display: grid;
 	  grid-gap: 5px;
-	  height: var(--height);
+	  
+  }
+
+  #board{
+	height: var(--height);
 	  width: min(350px, calc(var(--height) / 6 * 5));
   }
   
   #opponent{
 	  border: 5px solid;
 	  padding: 10px;
-	  margin: 0 10px;
+	  
 	  border-radius: 20px;
+	  height: calc(var(--height)*0.75);
+      width: min(260px,calc(var(--height) / 6 * 5*0.75));
+  }
+
+  #opponent-border{
+	border: 3px #d8d8d88c dashed;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 0 10px;
+    color: #d8d8d8;
+  }
+
+  #opponent .block .front {
+	border: 2px solid #e2e5e9;
   }
   
   .loading{
 	  left:0;
 	  right: 0;
+  }
+
+  .popup-msg{
+	position: absolute;
+    right: 0;
+    left: 0;
+    background: var(--color);
+    width: auto;
+    color: var(--background-color);
+    box-shadow: 0 0 3px 0 var(--color);
   }
   
   .row {
@@ -86,11 +114,13 @@ html, body {
   }
   
   .dialog{
-	  background: var(--background-color);
-	  padding: 10px;
-	  margin: auto;
-	  width: 100%;
-	  pointer-events: auto;
+	background: var(--background-color);
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+    pointer-events: auto;
+    white-space: break-spaces;
+    overflow: auto;
   }
   
   .block .front,

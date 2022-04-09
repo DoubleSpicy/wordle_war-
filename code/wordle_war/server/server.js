@@ -73,13 +73,37 @@ class Server {
                         console.log("keyword: "+answer);
                         io.to(opponent).emit('gameRoom', {word:answer,opponentId:socket.id});
                         socket.emit('gameRoom', {word:answer,opponentId:opponent});
-                        //socket.off('waitRoom',waitRoom);
+
+                        var opponentSocket = io.sockets.sockets.get(opponent);
+
+                        /*socket.on('exitRoom',(data)=>{
+                            console.log('(exitRoom) one of player exit room,',socket.id);
+                            socket.removeAllListeners('submitWord');
+                            io.to(opponent).emit('opponentExitRoom',{});
+                        });*/
+                        socket.on('submitWord',(data)=>{
+                            console.log('(submitWord)',data);
+                            io.to(opponent).emit('opponentState',{row:data.row,word:data.word});
+                            
+                        });
+                        /*opponentSocket.on('exitRoom',(data)=>{
+                            console.log('(exitRoom) one of player exit room,',opponent);
+                            opponentSocket.removeAllListeners('submitWord');
+                            socket.emit('opponentExitRoom',{});
+                        });*/
+                        opponentSocket.on('submitWord',(data)=>{
+                            console.log('(submitWord)',data);
+                            socket.emit('opponentState',{row:data.row,word:data.word});
+                        });
+
                     }else{
                         this.onlineplayers.push(socket.id);
                     }
-                    socket.on('submitWord',(data)=>{
-                        console.log('submitWord',data);
-                        io.to(data.opponentId).emit('opponentState',{row:data.row,word:data.word});
+                    socket.once('closeWaitRoom',(data)=>{
+                        console.log('(closeWaitRoom)',data);
+                        console.log("A player leave waiting room:"+socket.id);
+                        delete this.onlineplayers.pop(socket.id);
+                        
                     });
                 }else{
                     console.log('(waitRoom): user exist: '+socket.id);
@@ -91,6 +115,7 @@ class Server {
             socket.on('disconnect', () => {
                 console.log("A player disconnect:"+socket.id);
                 delete this.onlineplayers.pop(socket.id);
+                //socket.emit('exitRoom');
             });
 
 
