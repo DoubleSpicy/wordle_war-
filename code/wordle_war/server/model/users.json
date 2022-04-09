@@ -4,5 +4,15 @@
         "email": "asd@a.com",
         "username": "admin",
         "password": "$2b$10$RZWXWq2qh2LfFFKf39S7QuhptgD1XsWAA/DVSXkcS9/11WCWZ5U.C"
+    },
+    {
+        "id": "_9npe8swu0",
+        "email": "asd@asd.com",
+        "roles": {
+            "User": 2001
+        },
+        "username": "asd",
+        "password": "$2b$10$/TABiqe3ykNMXqB36CFzAuvgbJdt03V6Zw4RAKMfQPds1XB2erEvm",
+        "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFzZCIsImlhdCI6MTY0OTQ5MzI2OSwiZXhwIjoxNjQ5NTc5NjY5fQ.49MEZa9Q3x9BXlM09BUbwokOgXlD4U-6uYfQ3icwJhw"
     }
 ]

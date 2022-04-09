@@ -202,3 +202,7 @@
 20220318	21:23:57	bf2477f3-1d11-4bdb-86aa-1b358f22431d	OPTIONS	http://localhost:3000	/users
 20220318	21:23:57	507e47ff-88b8-40b8-9580-ded2451f44bb	GET	http://localhost:3000	/users
 20220318	21:23:59	ca60ff3b-d347-47d3-aac8-b280d0092350	GET	http://localhost:3000	/logout
+20220409	15:23:06	c0679d86-e6ee-4070-a832-d5b91302d2d1	POST	undefined	/Auth
+20220409	15:23:48	ea6f5640-cf1c-45e5-971c-109284ab9b69	POST	undefined	/register
+20220409	15:23:55	0ca25292-d366-4e46-843f-cde4c0826799	POST	undefined	/Auth
+20220409	15:24:02	515540e8-d2a4-4d56-bcb8-a29ad61b9f12	GET	undefined	/refresh
