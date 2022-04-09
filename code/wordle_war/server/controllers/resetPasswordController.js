@@ -11,7 +11,7 @@ const resetPasswordDB = {
     setUsers: function (data) { this.users = data }
 }
 
-const { sendConfirmationEmail, sendResetPasswordEmail } = require('./mailer');
+const { sendConfirmationEmail, sendResetPasswordEmail } = require('./sendEmail');
 const fsPromises = require('fs').promises;
 const path = require('path');
 const bcrypt = require('bcrypt');
