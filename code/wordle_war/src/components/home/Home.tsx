@@ -25,6 +25,8 @@ const Home = () => {
                 <br />
                 <Link to="/game">Go to the game page</Link>
                 <br />
+                <Link to="/mgame">Go to the Mutiplay game page</Link>
+                <br />
                 <Link to="/login">Go to login</Link>
                 <br />
                 <Link to="/register">Go to register</Link>
