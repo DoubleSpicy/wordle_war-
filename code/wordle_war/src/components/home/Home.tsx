@@ -33,6 +33,8 @@ const Home = () => {
                 <br />
                 <Link to="/reset">Go to reset password</Link>
                 <br />
+                {/* <Link to="/confirmEmail">Go to confirm Email</Link>
+                <br /> */}
                 <div className="flexGrow">
                     <button onClick={logout}>Sign Out</button>
                 </div>

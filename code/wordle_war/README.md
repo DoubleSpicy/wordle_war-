@@ -1,5 +1,6 @@
 ## Quick Start
-
+login: admin
+Pw: @Aa123
 ### File
 |path|description|
 |---|---|

@@ -1,5 +1,6 @@
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+// import ConfirmEmail from './components/auth/confirmEmail';
 import ResetPW from './components/auth/resetPassword';
 import Home from './components/home/Home';
 import Header from './components/Header';
@@ -24,7 +25,8 @@ function App() {
         <Route path="mgame" element={<GameRoom />} />
         <Route path="reset" element={<ResetPW />} />
         <Route path="tile" element={<Tile />} />
-
+        {/* <Route path="confirmEmail" element={<ConfirmEmail />} /> */}
+        
         <Route element={<RequireAuth />} >
         <Route path="/" element={<Home />} />
         </Route>

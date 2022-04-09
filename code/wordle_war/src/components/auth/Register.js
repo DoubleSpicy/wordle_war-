@@ -98,9 +98,9 @@ const Register = () => {
         <div class="center">
             {success ? (
                 <section>
-                    <h1>Success!</h1>
+                    <h1>Success register please check your Email!</h1>
                     <p>
-                        <a href="#">Sign In</a>
+                        <Link to="/">Go to Home</Link>
                     </p>
                 </section>
             ) : (
