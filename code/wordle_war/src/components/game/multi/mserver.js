@@ -8,8 +8,6 @@ const URL = 'http://localhost:3501'
 
 //connect
 const socket = io(URL);
-
-var opponentId,opponentRow = -1;
 // register preliminary event listeners here:
 
 
@@ -18,9 +16,6 @@ var opponentId,opponentRow = -1;
     //mySocketId = statusUpdate.mySocketId
 })*/
 
-const WaitRoom = ()=>{
-    socket.emit('getMessage', 'abc');
-};
 
 const socketNewOrder = (order) => {
     return {
@@ -36,8 +31,9 @@ const handlerFunc = (dispatch) => (order) => {
 
 const Server = {
     waitRoom(def){
+        console.log('(waitRoom)');
         this.opponentId = null;
-        socket.emit('waitRoom', 'abc');
+        socket.emit('waitRoom', '');
         socket.off('gameRoom');
         socket.on('gameRoom', data => {
             console.log('(gameRoom): ',data);
@@ -47,6 +43,9 @@ const Server = {
             //socket.on('gameRoom', this.handlerFunc(dispatch));
         });
     },
+    /*closeWaitRoom(){
+        socket.emit('closeWaitRoom', '');
+    },*/
     receiveOpponentState(){
         this.opponentRow = -1;
         socket.off('opponentState');
@@ -60,10 +59,18 @@ const Server = {
             }
             
         });
+        socket.on('opponentExitRoom',data => {
+            console.log('opponentExitRoom');
+            
+        });
     },
     submitWords(word,row){
         socket.emit('submitWord', {row:row,word:word,opponentId:this.opponentId});
-    }
+    },
+    /*suddenExitRoom(){
+
+        socket.emit('exitRoom', {opponentId:this.opponentId});
+    }*/
 };
 
 
