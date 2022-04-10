@@ -4,7 +4,7 @@ import ReactDom from 'react-dom';
 import {io} from 'socket.io-client';
 import EventBus from '../eventbus';
 
-const URL = 'http://localhost:3501'
+const URL = 'http://localhost:4500'
 
 //connect
 const socket = io(URL);
@@ -48,6 +48,7 @@ const Server = {
     },*/
     receiveOpponentState(){
         this.opponentRow = -1;
+        this.chatList = [];
         socket.off('opponentState');
         console.log("receiveOpponentState()");
         socket.on('opponentState',data => {
@@ -64,9 +65,20 @@ const Server = {
             
         });
     },
+    receiveChat(){
+        socket.on('receivedChat',data => {
+            this.chatList.push({sender:'opponent',msg:data});
+        });
+    },
+    getChatList(){
+        return this.chatList;
+    },
     submitWords(word,row){
         socket.emit('submitWord', {row:row,word:word,opponentId:this.opponentId});
     },
+    chat(msg){
+        socket.emit('chat', {msg:msg,opponentId:this.opponentId});
+    }
     /*suddenExitRoom(){
 
         socket.emit('exitRoom', {opponentId:this.opponentId});

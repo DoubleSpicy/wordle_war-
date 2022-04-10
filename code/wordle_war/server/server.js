@@ -123,6 +123,11 @@ class Server {
                             io.to(opponent).emit('opponentState',{row:data.row,word:data.word});
                             
                         });
+                        socket.on('chat',(data)=>{
+                            console.log('(chat) player('+socket.id+'):',data.msg);
+                            io.to(opponent).emit('receivedChat',data.msg);
+                            
+                        });
                         /*opponentSocket.on('exitRoom',(data)=>{
                             console.log('(exitRoom) one of player exit room,',opponent);
                             opponentSocket.removeAllListeners('submitWord');
@@ -130,6 +135,10 @@ class Server {
                         });*/
                         opponentSocket.on('submitWord',(data)=>{
                             console.log('(submitWord)',data);
+                            socket.emit('opponentState',{row:data.row,word:data.word});
+                        });
+                        opponentSocket.on('chat',(data)=>{
+                            console.log('(chat) player('+opponent+'):',data.msg);
                             socket.emit('opponentState',{row:data.row,word:data.word});
                         });
 

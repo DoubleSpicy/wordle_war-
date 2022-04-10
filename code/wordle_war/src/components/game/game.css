@@ -54,10 +54,28 @@ html, body {
   #opponent .block .front {
 	border: 2px solid #e2e5e9;
   }
+
+  .chatroom-btn{
+	position: absolute;
+    bottom: 2%;
+    left: 2%;
+	z-index: 100;
+  }
   
   .loading{
 	  left:0;
 	  right: 0;
+  }
+
+  .popup-chatroom{
+	background-color: var(--color);
+    color: var(--background-color);
+    box-shadow: 0 0 9px 0 var(--color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: auto;
   }
 
   .popup-msg{
