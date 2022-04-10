@@ -2,6 +2,7 @@ import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 // import ConfirmEmail from './components/auth/confirmEmail';
 import ResetPW from './components/auth/resetPassword';
+import ConfirmPwd from './components/auth/confirmPwd';
 import Home from './components/home/Home';
 import Header from './components/Header';
 import RequireAuth from './components/auth/RequireAuth';
@@ -26,7 +27,8 @@ function App() {
         <Route path="reset" element={<ResetPW />} />
         <Route path="tile" element={<Tile />} />
         {/* <Route path="confirmEmail" element={<ConfirmEmail />} /> */}
-        
+        <Route path="confirmPwd" element={<ConfirmPwd />} />
+
         <Route element={<RequireAuth />} >
         <Route path="/" element={<Home />} />
         </Route>

@@ -485,3 +485,5 @@
 20220410	21:07:32	370cd528-cb6e-4f7e-b2cb-48fe95dbcc5b	POST	undefined	/resetPassword
 20220410	21:07:39	2d5e6222-60db-4fb5-a33c-163bf7cfec26	GET	undefined	/resetPassword/confirmation
 20220410	21:07:39	fad5af51-9324-4b1d-8aee-5eaff8c9e967	GET	undefined	/favicon.ico
+20220410	21:11:26	cfbcd899-784e-4e2a-9a5e-a2c4803ac729	OPTIONS	http://localhost:3000	/resetPassword
+20220410	21:11:26	b6e2eee1-7069-4b93-91aa-f45f93be4867	POST	http://localhost:3000	/resetPassword
