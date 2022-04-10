@@ -17,7 +17,28 @@ const Home = () => {
 
         <div className="center">
             <section>
+                <h1>Home</h1>
+                <br />
+                <p>You are no logged in!</p>
+                <br />
+                <h3>public (no login)</h3>
+                <Link to="/login">Go to login</Link>
+                <br />
+                <Link to="/register">Go to register</Link>
+                <br />
+                <Link to="/reset">Go to reset password</Link>
+                <br />
+                <Link to="/confirmPwd">Go to confirmPwd(with email)</Link>
+                <br />
+                <Link to="/setting">Go to the setting (no setting)</Link>
+                <br />
+                <Link to="/game">Go to the game page (single player)</Link>
+                <br />
+                <Link to="/mgame">Go to the Mutiplay game page (guest)</Link>
 
+                {/* <div className="flexGrow">
+                    <button onClick={logout}>Sign Out</button>
+                </div> */}
             </section>
         </div>
 

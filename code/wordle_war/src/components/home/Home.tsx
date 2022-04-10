@@ -10,7 +10,8 @@ const Home = () => {
         // if used in more components, this should be in context 
         // axios to /logout endpoint 
         // setAuth({});
-        navigate('/login');
+        // navigate('/login');
+        navigate('/main');
     }
 
     return (
@@ -32,7 +33,7 @@ const Home = () => {
                 <br />
                 <h3>private (with login)</h3>
                 <br />
-                <Link to="/setting">Go to the setting</Link>
+                <Link to="/setting">Go to the setting (inetruction)</Link>
                 <br />
                 <Link to="/game">Go to the game page</Link>
                 <br />
