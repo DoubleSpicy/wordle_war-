@@ -6,6 +6,8 @@ import EventBus from '../eventbus';
 import AllWords from '../word';
 import CircularProgress from '@mui/material/CircularProgress';
 import Server from './mserver';
+import ChatIcon from '@mui/icons-material/Chat';
+import Fab from '@mui/material/Fab';
 import { Button } from '@mui/material';
 
 //call it using <Game />
@@ -47,8 +49,10 @@ class MultiGame extends React.Component {
                 userfill:null
             },
             game_state: this.props.game_state,
-            popup:''
+            popup:'',
+            isChatroomShow:false
         };
+        this.toggleChatRoom = this.toggleChatRoom.bind(this);
         //this.setState({keyword:props.word,letter_count:props.word.length});
         
         
@@ -164,8 +168,7 @@ class MultiGame extends React.Component {
                     this.props.gamestatedef(1);
                 },1500);
             //this.props.gamestatedef(true);
-        }
-        if(this.state.current_row >= this.state.row_count){
+        }else if(this.state.current_row >= this.state.row_count){
             if(!this.checkTie()){
                 this.showPopup("All Chances are used");
             }
@@ -263,6 +266,11 @@ class MultiGame extends React.Component {
         //console.log(result);
         return result;
     }
+
+    toggleChatRoom(){
+        this.setState({isChatroomShow : !this.state.isChatroomShow});
+        
+    }
  
 
     render() {
@@ -324,20 +332,27 @@ class MultiGame extends React.Component {
                     </div>
                 </div>
                 <Keyboard game={this} />
-                {<div className='popup-msg'>
+                
+
+                <div className='popup-msg'>
                     {this.state.popup}
-                </div>}
+                </div>
             </div>
 
         );
     }
 }
-/*
-<label>
-    multiplayer input:
-    <input type="text" name="multiplayerInput" onChange={(event)=>this.opponentChange(event.target.value)}/>
-</label>
-*/
+/*<div className='chatroom-btn'>
+    <Fab onClick={this.toggleChatRoom}>
+        <ChatIcon />
+    </Fab>
+</div>
+
+{this.state.isChatroomShow && <div className='popup-chatroom'>
+    chatroom<br/>
+    {Server.getChatList()}<br/>
+    <input type="text"></input>
+</div>}*/
 
 export default class GameRoom extends React.Component {
 
@@ -393,6 +408,7 @@ export default class GameRoom extends React.Component {
                 <MultiGame resultdef={this.updateResult} 
                     gamestatedef={this.updateGameState} 
                     keyword={this.state.keyword}/> }
+                
                 {this.state.game_state != 0 && <div className='layer'>
                     <div className='dialog'>
                         {this.state.game_state == 1 && "You Win!"}
