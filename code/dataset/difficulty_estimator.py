@@ -6,8 +6,9 @@ data = pd.read_csv("5_letters.csv")
 
 # init function
 # WARNING: RANDOM VALUE GENERATOR!
-difficulty = np.random.rand(1, data.shape[0])
+#difficulty = np.random.rand(1, data.shape[0])
+difficulty = np.random.normal(1500, 1500^2, 2499);
 # print(difficulty)
 data.insert(data.shape[1], "difficulty", difficulty.T, True)
 print(data)
-data.to_csv("./words.csv")
+data.to_csv("./words2.csv")
