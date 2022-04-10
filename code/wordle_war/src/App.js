@@ -16,6 +16,7 @@ import Editor from './components/layout/editor';
 import Lounge from './components/layout/Lounge';
 import LinkPage from './components/layout/LinkPage';
 import Unauthorized from './components/layout/Unauthorized';
+import Setting from './components/layout/setting';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const ROLES = {
@@ -45,6 +46,7 @@ function App() {
         {/* we want to protect these routes */}
        <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
           <Route path="/" element={<Home />} />
+          <Route path="setting" element={<Setting />} />
         </Route>
 
         <Route element={<RequireAuth allowedRoles={[ROLES.Editor]} />}>

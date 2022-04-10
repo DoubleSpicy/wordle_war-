@@ -73,17 +73,6 @@ const ResetPassword = () => {
                             required
                             onChange={(e) => setUserEmail(e.target.value)}
                         />
-                        {/* <label htmlFor="userEmail">
-                        Reset Hash:
-                    </label>
-                    <input
-                        type="hash"
-                        id="userEmail"
-                        value={userHash}
-                        autoComplete="off"
-                        required
-                        onChange={(e) => setUserHash(e.target.value)}
-                    /> */}
                         <button>Reset password</button>
                     </form>
                 </section>
