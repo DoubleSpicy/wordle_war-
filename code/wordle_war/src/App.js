@@ -3,6 +3,7 @@ import Login from './components/auth/Login';
 import ResetPW from './components/auth/resetPassword';
 import ConfirmPwd from './components/auth/confirmPwd';
 import Home from './components/home/Home';
+import HomePageNoLogin from './components/home/HomePageNoLogin';
 import Header from './components/Header';
 import RequireAuth from './components/auth/RequireAuth';
 import Game from './components/game/game';
@@ -29,12 +30,18 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* public routes */}
+        <Route path="main" element={<HomePageNoLogin />} />
+        <Route path="game" element={<Game />} />
+        <Route path="mgame" element={<GameRoom />} />
+        <Route path="reset" element={<ResetPW />} />
+        <Route path="tile" element={<Tile />} />
         
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="linkpage" element={<LinkPage />} />
         <Route path="unauthorized" element={<Unauthorized />} />
 
+        <Route path="linkpage" element={<LinkPage />} />  {/* ???? */}
+       
         {/* we want to protect these routes */}
        <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
           <Route path="/" element={<Home />} />
