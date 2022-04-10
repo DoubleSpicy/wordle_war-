@@ -51,16 +51,16 @@ app.get('/test', (req, res) => {
     res.json({ message: 'Hello World!' });
 })
 
-app.use('/login', require('./routes/login'));
-app.use('/activate', require('./routes/activate'));
-app.use('/resetPassword', require('./routes/reset-password'));
+app.use('/login', require('./routes/login')); //ok we will use auth
+app.use('/activate', require('./routes/activate'));  //ok
+app.use('/resetPassword', require('./routes/reset-password')); 
 app.use('/resetPassword/confirmation', require('./routes/resetPasswordConfirmation'));
 
-app.use('/register', require('./routes/register'));
-app.use('/auth', require('./routes/auth'));
-app.use('/refresh', require('./routes/refresh'));
+app.use('/register', require('./routes/register')); //ok
+app.use('/auth', require('./routes/auth')); // ok
+app.use('/refresh', require('./routes/refresh')); // ok
 app.use('/logout', require('./routes/logout'));
-app.use('/testEmail', require('./routes/testEmail'));
+app.use('/testEmail', require('./routes/testEmail')); // ok
 
 app.use(verifyJWT);
 app.use('/employees', require('./routes/api/employees'));
