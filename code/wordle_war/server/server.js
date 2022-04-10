@@ -53,7 +53,7 @@ app.get('/test', (req, res) => {
 
 app.use('/login', require('./routes/login')); //ok we will use auth
 app.use('/activate', require('./routes/activate'));  //ok
-app.use('/resetPassword', require('./routes/reset-password')); 
+app.use('/resetPassword', require('./routes/reset-password')); //ok
 app.use('/resetPassword/confirmation', require('./routes/resetPasswordConfirmation'));
 
 app.use('/register', require('./routes/register')); //ok
