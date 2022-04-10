@@ -75,16 +75,6 @@ const Login = () => {
 
     return (
         <div class="center">
-
-            {/* {success ? (
-                <section>
-                    <h1>You are logged in!</h1>
-                    <br />
-                    <p>
-                        <Link to="/">Go to Home</Link>
-                    </p>
-                </section>
-            ) : ( */}
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Sign In</h1>
@@ -108,7 +98,7 @@ const Login = () => {
                             value={pwd}
                             required
                         />
-                        <button>Sign In</button>
+                        <button>Login In</button>
                         {/* <div className="persistCheck">
                     <input
                         type="checkbox"

@@ -1,16 +1,10 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useContext } from "react";
-// import AuthContext from "../context/AuthProvider";
 
 const Home = () => {
-    // const { setAuth } = useContext(AuthContext);
     const navigate = useNavigate();
-
+    //return to main page
     const logout = async () => {
-        // if used in more components, this should be in context 
-        // axios to /logout endpoint 
-        // setAuth({});
-        // navigate('/login');
         navigate('/main');
     }
 
@@ -22,18 +16,9 @@ const Home = () => {
                 <br />
                 <p>You are logged in!</p>
                 <br />
-                {/* <h3>public (no login)</h3>
-                <Link to="/login">Go to login</Link>
-                <br />
-                <Link to="/register">Go to register</Link>
-                <br />
-                <Link to="/reset">Go to reset password</Link>
-                <br />
-                <Link to="/confirmPwd">Go to confirmPwd</Link> */}
-                <br />
                 <h3>private (with login)</h3>
                 <br />
-                <Link to="/setting">Go to the setting (inetruction)</Link>
+                <Link to="/setting">Go to the setting</Link>
                 <br />
                 <Link to="/game">Go to the game page</Link>
                 <br />
