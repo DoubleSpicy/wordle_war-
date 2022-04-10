@@ -2,6 +2,8 @@ const pendingUser = require('../model/pending-users');
 const User = require('../model/User');
 const bcrypt = require('bcrypt');
 
+const { sendActivateEmail } = require('./activateEmail');
+
 const handleNewUser = async (req, res) => {
     const { email ,user, pwd } = req.body;
     if (!email|| !user || !pwd) return res.status(400).json({ 'message': 'Username and password are required.' });
@@ -33,7 +35,7 @@ const handleNewUser = async (req, res) => {
 
         console.log(result);
         console.log("gen_id ",gen_id);
-
+        await sendActivateEmail(user, email, gen_id );
         res.status(201).json({ 'success': `New user ${user} created!` });
     } catch (err) {
         res.status(500).json({ 'message': err.message });

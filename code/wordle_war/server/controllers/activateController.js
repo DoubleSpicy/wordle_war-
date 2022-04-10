@@ -21,7 +21,8 @@ const handleActivate = async (req, res) => {
                             password: foundUser.password,
                             username : foundUser.username});
             await move2User.save();
-            return res.status(201).json(move2User);
+            // return res.status(201).json(move2User);
+            return res.status(201).json({ 'success': `welcome ${foundUser.username} avtivate!` });
         } catch (err) {
             console.error(err);
         }
