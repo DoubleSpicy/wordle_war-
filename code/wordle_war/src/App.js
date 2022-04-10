@@ -10,6 +10,10 @@ import Tile from './components/game/Tile';
 import GameRoom from './components/game/multi/multiGame';
 import Layout from './components/layout/Layout';
 import Missing from './components/layout/missing';
+import Admin from './components/layout/admin';
+import Editor from './components/layout/editor';
+import Lounge from './components/layout/Lounge';
+import LinkPage from './components/layout/LinkPage';
 import Unauthorized from './components/layout/Unauthorized';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -27,12 +31,19 @@ function App() {
         {/* public routes */}
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="linkpage" element={<Home />} />
+        <Route path="linkpage" element={<LinkPage />} />
         <Route path="unauthorized" element={<Unauthorized />} />
 
         {/* we want to protect these routes */}
+        {/* <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
+          <Route path="/" element={<Home />} />
+        </Route> */}
+
         <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
           <Route path="/" element={<Home />} />
+          <Route path="editor" element={<Editor />} />
+          <Route path="admin" element={<Admin />} />
+          <Route path="lounge" element={<Lounge />} />
         </Route>
 
 
@@ -167,8 +178,8 @@ export default App;
 //         <Route path="register" element={<Register />} /> ok
 //         <Route path="game" element={<Game />} /> ok
 //         <Route path="mgame" element={<GameRoom />} /> ok
-//         <Route path="reset" element={<ResetPW />} /> ok 
-//         <Route path="tile" element={<Tile />} /> ok 
+//         <Route path="reset" element={<ResetPW />} /> ok
+//         <Route path="tile" element={<Tile />} /> ok
 //         {/* <Route path="confirmEmail" element={<ConfirmEmail />} /> */}
 //         <Route path="confirmPwd/:id" element={<ConfirmPwd />} />
 //         {/* <Route path="/confirmPwd/:id" component={<ConfirmPwd />}/>  */}
