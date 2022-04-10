@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 //https://github.com/gitdagray/react_login_form/blob/main/src/Register.js
 import axios from '../../api/axios';
-const LOGIN_URL = '/login';
+const LOGIN_URL = '/Auth';
 
 const Login = () => {
     // const { setAuth } = useContext(AuthContext);
