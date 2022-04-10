@@ -5,7 +5,7 @@ import { useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from "../context/AuthProvider";
 //https://github.com/gitdagray/react_protected_routes/blob/main/src/components/Login.js
 import { Button } from 'react-bootstrap';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation  } from "react-router-dom";
 
 import useAuth from '../hooks/useAuth';
 
@@ -17,13 +17,18 @@ const Login = () => {
     // const { setAuth } = useContext(AuthContext);
     const { setAuth } = useAuth();
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+
     const userRef = useRef();
     const errRef = useRef();
 
     const [user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
+    // const [success, setSuccess] = useState(false);
 
     useEffect(() => {
         userRef.current.focus();
@@ -51,7 +56,8 @@ const Login = () => {
             setAuth({ user, pwd, roles, accessToken });
             setUser('');
             setPwd('');
-            setSuccess(true);
+            // setSuccess(true);
+            navigate(from, { replace: true });
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
@@ -70,7 +76,7 @@ const Login = () => {
     return (
         <div class="center">
 
-            {success ? (
+            {/* {success ? (
                 <section>
                     <h1>You are logged in!</h1>
                     <br />
@@ -78,7 +84,7 @@ const Login = () => {
                         <Link to="/">Go to Home</Link>
                     </p>
                 </section>
-            ) : (
+            ) : ( */}
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Sign In</h1>
@@ -120,7 +126,7 @@ const Login = () => {
                         </span>
                     </p>
                 </section>
-            )}
+            {/* )} */}
         </div>
     )
 }
