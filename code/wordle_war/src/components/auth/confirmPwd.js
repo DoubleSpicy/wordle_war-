@@ -1,12 +1,18 @@
 import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useParams } from "react-router-dom";
 import axios from '../../api/axios';
 const RESET_PW_COMFRIM = '/resetPassword/confirmation';
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[0-9]).{1,24}$/;
 
 const ConfirmPwd = () => {
+    const [posts, setPosts] = useState([])
+    const params = useParams();
+    console.log(params);
+    const link = [RESET_PW_COMFRIM, params.id].join('/');
+    console.log(link);
+    // console.log(this.props.match.params.id);
     const [userEmail, setUserEmail] = useState('');
     // const [userHash, setUserHash] = useState('');
     const [isSendEmail, setIsSendEmail] = useState(false)
@@ -56,7 +62,7 @@ const ConfirmPwd = () => {
             //         withCredentials: true
             //     }
             // );
-            
+
             setSuccess(true);
         } catch (err) {
 
