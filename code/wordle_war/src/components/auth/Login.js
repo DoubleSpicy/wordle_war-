@@ -7,6 +7,7 @@ import AuthContext from "../context/AuthProvider";
 import { Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
+import useAuth from '../hooks/useAuth';
 
 //https://github.com/gitdagray/react_login_form/blob/main/src/Register.js
 import axios from '../../api/axios';
@@ -14,7 +15,8 @@ const LOGIN_URL = '/Auth';
 
 const Login = () => {
     // const { setAuth } = useContext(AuthContext);
-    const { setAuth } = useContext(AuthContext);
+    const { setAuth } = useAuth();
+
     const userRef = useRef();
     const errRef = useRef();
 

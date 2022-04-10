@@ -1,6 +1,17 @@
 ## Quick Start
-login: admin
-Pw: @Aa123
+role admin:  
+login: admin  
+Pw: @Aa123  
+  
+
+role editor:  
+login: editor  
+Pw: @Aa123  
+
+
+role user:  
+login: user  
+Pw: @Aa123  
 ### File
 |path|description|
 |---|---|
