@@ -9,3 +9,4 @@
 20220318	17:42:55	af97a9bf-efde-4b65-9733-fac380186007	Error: Not allowed by CORS
 20220318	17:46:38	7aaa2013-7675-4282-942b-fb60750ca8a8	Error: Not allowed by CORS
 20220318	17:46:42	146ad9dc-b52c-432f-8d13-b27de5897bb6	Error: Not allowed by CORS
+20220411	02:10:17	ba7de413-0474-46a0-abea-47f86a867229	SyntaxError: Unexpected token p in JSON at position 44

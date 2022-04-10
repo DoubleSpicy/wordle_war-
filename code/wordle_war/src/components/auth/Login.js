@@ -99,15 +99,6 @@ const Login = () => {
                             required
                         />
                         <button>Login In</button>
-                        {/* <div className="persistCheck">
-                    <input
-                        type="checkbox"
-                        id="persist"
-                        onChange={togglePersist}
-                        checked={persist}
-                    />
-                    <label htmlFor="persist">Trust This Device</label>
-                </div> */}
                     </form>
                     <p>
                         Need an Account?<br />

@@ -135,11 +135,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from '../../api/axios';
 
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[0-9]).{6,24}$/;
-const REGISTER_URL = '/taaaaaa';
+const REGISTER_URL = '/userChangePassword';
 
 const Setting = () => {
     const userRef = useRef();
     const errRef = useRef();
+
+    const [email, setEmail] = useState('');
+    const [validEmail, setValidEmail] = useState(false);
+    const [emailFocus, setEmailFocus] = useState(false);
+
+    const [user, setUser] = useState('');
+    const [validName, setValidName] = useState(false);
+    const [userFocus, setUserFocus] = useState(false);
+
+    const [oldPwd, setoldPwd] = useState('');
+    const [validoldPwd, setValidoldPwd] = useState(false);
+    const [oldPwdFocus, setoldPwdFocus] = useState(false);
+
 
     const [pwd, setPwd] = useState('');
     const [validPwd, setValidPwd] = useState(false);
@@ -159,7 +172,7 @@ const Setting = () => {
 
     useEffect(() => {
         setErrMsg('');
-    }, [pwd, matchPwd])
+    }, [email, user, pwd, matchPwd, oldPwd])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -168,18 +181,22 @@ const Setting = () => {
             setErrMsg("Invalid Entry");
             return;
         }
-        console.log({ pwd })
+
+        if(pwd == oldPwd){
+            setErrMsg("cannot input same password!");
+            return;
+        }
+        console.log({ email, user, pwd, oldPwd })
         try {
-            console.log(pwd)
-            // const response = await axios.post(REGISTER_URL,
-            //     JSON.stringify({ pwd }),
-            //     {
-            //         headers: { 'Content-Type': 'application/json' },
-            //         withCredentials: true
-            //     }
-            // );
-            // console.log(JSON.stringify(response?.data));
-            // console.log(JSON.stringify(response))
+            const response = await axios.post(REGISTER_URL,
+                JSON.stringify({ pwd }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
+            );
+            console.log(JSON.stringify(response?.data));
+            console.log(JSON.stringify(response))
             setSuccess(true);
             setPwd('');
             setMatchPwd('');
@@ -195,10 +212,51 @@ const Setting = () => {
             <section>
                 <h1>setting</h1>
                 <br />
+
                 <p>change password</p>
+                <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                 <form onSubmit={handleSubmit}>
+
+
+                    <label htmlFor="userEmail">
+                        Email:
+                    </label>
+                    <input
+                        type="email"
+                        id="userEmail"
+                        value={email}
+                        autoComplete="off"
+                        required
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <label htmlFor="username">
+                        Username:
+                    </label>
+                    <input
+                        type="text"
+                        id="username"
+                        ref={userRef}
+                        autoComplete="off"
+                        onChange={(e) => setUser(e.target.value)}
+                        value={user}
+                        required
+                    />
+
+
+                    <label htmlFor="oldpassword">
+                        Old Password:
+                    </label>
+                    <input
+                        type="password"
+                        id="oldPwd"
+                        autoComplete="off"
+                        onChange={(e) => setoldPwd(e.target.value)}
+                        value={oldPwd}
+                        required
+                    />
+
                     <label htmlFor="password">
-                        Password:
+                        New Password:
                         <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
                         <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                     </label>
@@ -220,7 +278,7 @@ const Setting = () => {
                         Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
                     </p>
                     <label htmlFor="confirm_pwd">
-                        Confirm Password:
+                        Confirm New Password:
                         <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
                         <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                     </label>
