@@ -15,7 +15,7 @@ const sendEmail = async (req, res) =>{
   const mailOptions = {
     from: 'csci3100wordle@gmail.com',
     to: '2022csci3100@gmail.com',
-    subject: 'Wordle - Activate Account',
+    subject: 'TTTTTTTTTTEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSTTTTTTTTTTTTTTTTT',
     html: `
     <h3> Hello ${user} ${email}</h3>
     <p>Thank you for registering into our Application. Much Appreciated! Just one last step is laying ahead of you...</p>
