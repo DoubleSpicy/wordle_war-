@@ -27,10 +27,12 @@ function App() {
         <Route path="reset" element={<ResetPW />} />
         <Route path="tile" element={<Tile />} />
         {/* <Route path="confirmEmail" element={<ConfirmEmail />} /> */}
-        <Route path="confirmPwd" element={<ConfirmPwd />} />
+        <Route path="confirmPwd/:id" element={<ConfirmPwd />} />
+        {/* <Route path="/confirmPwd/:id" component={<ConfirmPwd />}/>  */}
+
 
         <Route element={<RequireAuth />} >
-        <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
         </Route>
 
       </Routes>
