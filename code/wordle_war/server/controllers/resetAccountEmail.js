@@ -1,3 +1,4 @@
+const { Hash } = require('crypto');
 const nodemailer = require('nodemailer');
 
 
@@ -19,7 +20,7 @@ function resetAccountEmail(email, user, hash) {
         html: `
           <h3> Hello ${user} ${email}</h3>
           <p>Change your Wordle Account password.</p>
-          <p>To Change your account password, please follow this link: <a target="_" href="${process.env.DOMAIN}/resetPassword/confirmation">${process.env.DOMAIN}/activate </a></p>
+          <p>To Change your account password, please follow this link: <a target="_" href="${process.env.WEBSITE}/confirmPwd/${hash}">${process.env.WEBSITE}/activate </a></p>
           <p>Cheers</p>
           <p>Wordle Team</p>
           `
