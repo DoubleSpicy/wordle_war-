@@ -18,15 +18,10 @@ const Home = () => {
         <div className="center">
             <section>
                 <h1>Home</h1>
+                {/* <br />
+                <p>You are logged in!</p> */}
                 <br />
-                <p>You are logged in!</p>
-                <br />
-                <Link to="/setting">Go to the setting</Link>
-                <br />
-                <Link to="/game">Go to the game page</Link>
-                <br />
-                <Link to="/mgame">Go to the Mutiplay game page</Link>
-                <br />
+                <h3>public (no login)</h3>
                 <Link to="/login">Go to login</Link>
                 <br />
                 <Link to="/register">Go to register</Link>
@@ -34,6 +29,14 @@ const Home = () => {
                 <Link to="/reset">Go to reset password</Link>
                 <br />
                 <Link to="/confirmPwd">Go to confirmPwd</Link>
+                <br />
+                <h3>private (with login)</h3>
+                <br/>
+                <Link to="/setting">Go to the setting</Link>
+                <br />
+                <Link to="/game">Go to the game page</Link>
+                <br />
+                <Link to="/mgame">Go to the Mutiplay game page</Link>
                 <br />
                 {/* <Link to="/confirmEmail">Go to confirm Email</Link>
                 <br /> */}
