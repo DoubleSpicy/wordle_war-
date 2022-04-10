@@ -10,8 +10,8 @@ const ConfirmPwd = () => {
     const [posts, setPosts] = useState([])
     const params = useParams();
     console.log(params);
-    const link = [RESET_PW_COMFRIM, params.id].join('/');
-    console.log(link);
+    // const LINK2SERVER = [RESET_PW_COMFRIM, params.id].join('/');
+    // console.log(LINK2SERVER);
     // console.log(this.props.match.params.id);
     const [userEmail, setUserEmail] = useState('');
     // const [userHash, setUserHash] = useState('');
@@ -55,13 +55,13 @@ const ConfirmPwd = () => {
 
         console.log({ pwd });
         try {
-            // const response = await axios.post(RESET_PW_COMFRIM,
-            //     JSON.stringify({ email: userEmail }),
-            //     {
-            //         headers: { 'Content-Type': 'application/json' },
-            //         withCredentials: true
-            //     }
-            // );
+            const response = await axios.post(RESET_PW_COMFRIM,
+                JSON.stringify({ pwd: pwd, hash: params.id}),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
+            );
 
             setSuccess(true);
         } catch (err) {
@@ -85,7 +85,7 @@ const ConfirmPwd = () => {
         <div class="center">
             {success ? (
                 <section>
-                    <h1>"Please check your email to reset the password!"</h1>
+                    <h1>"you reseted the password!"</h1>
                     <br />
                     <p>
                         <Link to="/">Go to Home</Link>
