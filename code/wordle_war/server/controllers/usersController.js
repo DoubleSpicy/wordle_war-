@@ -2,6 +2,8 @@ const User = require('../model/User');
 
 const getAllUsers = async (req, res) => {
     const users = await User.find();
+    // const player1 = await User.findOne({ _id: req.params.id }).exec();
+    console.log (users);
     if (!users) return res.status(204).json({ 'message': 'No users found' });
     res.json(users);
 }
