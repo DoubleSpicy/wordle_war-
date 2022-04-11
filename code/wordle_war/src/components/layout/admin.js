@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import UserList from "./userList";
 import AdminChangePw from "./adminChangePw";
+// import Refresh from "./refresh"
 const Admin = () => {
     return (
         <div class="center">
@@ -10,6 +11,7 @@ const Admin = () => {
                 <p>this is admin page</p>
                 <UserList />
                 <AdminChangePw />
+                {/* <Refresh /> */}
                 <div className="flexGrow">
                     <Link to="/">Home</Link>
                 </div>

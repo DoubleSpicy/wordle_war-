@@ -67,7 +67,7 @@ app.use('/adminChangePassword', require('./routes/adminChangePassword'));
 app.use('/testEmail', require('./routes/testEmail')); // ok
 app.use('/game', require('./routes/api/game'));
 
-
+app.use(verifyJWT); // cannot del 
 app.use('/employees', require('./routes/api/employees'));
 app.use('/users', require('./routes/api/users'));
 
