@@ -29,7 +29,9 @@ const Home = () => {
                 <Link to="/editor">Go to the Editor page</Link>
                 <br />
                 {/* <Link to={"http://localhost:3500/admin"}>Go to the Admin page</Link> */}
-                <button onClick={toAdmin}>Go to the Admin Page</button>
+                <button onClick={toAdmin}>Go to the Admin dashboard</button>
+                <br />
+                <Link to="/admin">Go to the Admin page</Link>
                 <br />
                 {/* <Link to="/confirmEmail">Go to confirm Email</Link>
                 <br /> */}
