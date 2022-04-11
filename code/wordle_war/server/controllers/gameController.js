@@ -1,5 +1,5 @@
 const User = require('../model/User');
-import Elo from './elo';
+//import Elo from './elo';
 
 //{player1 : player1id, player2 : player2id}
 const createNewGameRoom =  async (req, res) => {
@@ -24,7 +24,7 @@ const createNewGameRoom =  async (req, res) => {
 }
 
 //{player : ratingPlayer, opponent: ratingOppo, word: ratingWord, isWin: true/false }
-const updateRating =  async (req, res) => {
+/*const updateRating =  async (req, res) => {
     const { player, opponent,word,isWin } = req.body;
     if (!player || !opponent || !word || !isWin) return res.status(400).json({ 'message': 'Rating are required.' });
     var newrating = Elo.calcNewRating(isWin,player, opponent,word);
@@ -44,7 +44,7 @@ const updateRating =  async (req, res) => {
         new: true
     });
     res.json(doc);
-}
+}*/
 
 
 const fs = require("fs");
