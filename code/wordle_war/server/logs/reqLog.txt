@@ -1363,3 +1363,12 @@
 20220411	12:30:05	18a07dec-25eb-426d-8232-d829e5e372a6	OPTIONS	http://localhost:3000	/Auth
 20220411	12:30:05	0e63fc70-7003-4b6e-bbd9-24658afc4d5d	POST	http://localhost:3000	/Auth
 20220411	12:33:18	a81fc6c5-22b3-4201-8a98-36752dbafcd0	GET	undefined	/refresh
+20220411	12:58:32	3ce65750-fccf-4cd5-9109-a31d10047fff	GET	undefined	/admin
+20220411	12:58:32	f0244ae0-3102-4045-b084-bbeea2086837	GET	undefined	/admin/frontend/assets/global.bundle.js
+20220411	12:58:32	c27465be-d719-43f1-b9bd-62026b656a2c	GET	undefined	/admin/frontend/assets/design-system.bundle.js
+20220411	12:58:32	f3442527-ef33-4f64-98a8-20f5bd7e1275	GET	undefined	/admin/frontend/assets/app.bundle.js
+20220411	12:58:32	474e91e9-a357-4a27-b9db-ba0eb5935b60	GET	undefined	/admin/frontend/assets/components.bundle.js
+20220411	12:58:34	85809b2b-2e48-478b-a717-2a2d860ebda8	GET	undefined	/admin/frontend/assets/logo.svg
+20220411	12:58:34	541776cb-d9b4-40f9-b23d-473f81385645	GET	undefined	/favicon.ico
+20220411	12:58:47	6e78388e-9c89-4a5d-87a0-acb66d3a7e94	GET	undefined	/admin/api/resources/User/actions/list
+20220411	12:58:47	01a4ba7d-6e7a-4988-a457-62b0e6e86548	GET	undefined	/favicon.ico
