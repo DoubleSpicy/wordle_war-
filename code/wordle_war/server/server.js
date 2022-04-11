@@ -32,11 +32,13 @@ app.use(credentials);
 // Cross Origin Resource Sharing
 app.use(cors(corsOptions));
 
+app.use('/admin', require('./routes/admin')); //ok
+// built-in middleware for json 
+app.use(express.json());
 // built-in middleware to handle urlencoded form data
 app.use(express.urlencoded({ extended: false }));
 
-// built-in middleware for json 
-app.use(express.json());
+
 
 //middleware for cookies
 app.use(cookieParser());
@@ -60,13 +62,12 @@ app.use('/register', require('./routes/register')); //ok
 app.use('/auth', require('./routes/auth')); // ok
 app.use('/refresh', require('./routes/refresh')); // ok
 app.use('/logout', require('./routes/logout')); //ok
-app.use('/userChangePassword', require('./routes/userChangePassword'));  //ok
+app.use('/userChangePassword', require('./routes/userChangePassword'));//ok
 app.use('/adminChangePassword', require('./routes/adminChangePassword')); 
 app.use('/testEmail', require('./routes/testEmail')); // ok
 app.use('/game', require('./routes/api/game'));
-app.use('/admin', require('./routes/admin')); //ok
 
-app.use(verifyJWT);
+
 app.use('/employees', require('./routes/api/employees'));
 app.use('/users', require('./routes/api/users'));
 
