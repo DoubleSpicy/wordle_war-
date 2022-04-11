@@ -53,7 +53,8 @@ const Login = () => {
             console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
-            setAuth({ user, pwd, roles, accessToken });
+            const userid = response?.data?.id;
+            setAuth({ user, pwd, roles, accessToken, userid });
             setUser('');
             setPwd('');
             // setSuccess(true);
@@ -72,9 +73,9 @@ const Login = () => {
         }
     }
 
-
     return (
         <div class="center">
+            
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Sign In</h1>
