@@ -63,6 +63,7 @@ app.use('/logout', require('./routes/logout')); //ok
 app.use('/userChangePassword', require('./routes/userChangePassword')); 
 app.use('/testEmail', require('./routes/testEmail')); // ok
 app.use('/game', require('./routes/api/game'));
+app.use('/admin', require('./routes/admin')); //ok
 
 app.use(verifyJWT);
 app.use('/employees', require('./routes/api/employees'));
