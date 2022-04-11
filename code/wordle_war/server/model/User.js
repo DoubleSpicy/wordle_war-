@@ -26,6 +26,21 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    rating: {
+        type: Number,
+        required: true,
+        default: 1500
+    },
+    wincount:{
+        type: Number,
+        required: true,
+        default: 0
+    },
+    losecount:{
+        type: Number,
+        required: true,
+        default: 0
+    },
     refreshToken: String
 });
 
