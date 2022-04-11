@@ -21,19 +21,19 @@ const AdminChangePw = () => {
     const [errMsg, setErrMsg] = useState('');
 
 
-    const LOGIN_URL = '/resetPasswordsssss';
+    const adminChangePassword = '/adminChangePassword';
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         console.log({ userEmail , userPw });
         try {
-            // const response = await axios.post(LOGIN_URL,
-            //     JSON.stringify({ email: userEmail }),
-            //     {
-            //         headers: { 'Content-Type': 'application/json' },
-            //         withCredentials: true
-            //     }
-            // );
+            const response = await axios.post(adminChangePassword,
+                JSON.stringify({  userEmail,  userPw}),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
+            );
 
             setSuccess(true);
         } catch (err) {
