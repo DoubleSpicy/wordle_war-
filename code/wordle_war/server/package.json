@@ -10,24 +10,29 @@
   "author": "Dave Gray",
   "license": "ISC",
   "dependencies": {
+    "@admin-bro/express": "^3.1.0",
+    "@admin-bro/mongoose": "^1.1.0",
+    "admin-bro": "^4.0.1",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.22.0",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "datauri": "^3.0.0",
     "date-fns": "^2.23.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.7",
     "multer": "^1.4.2",
-    "next": "^9.4.4",
+    "next": "^12.1.4",
     "nodemailer": "^6.7.3",
     "nodemailer-smtp-transport": "^2.7.4",
     "socket.io": "^4.4.1",
-    "uuid": "^8.3.2",
-    "cookie-parser": "^1.4.6",
-    "mongoose": "^6.2.7"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
