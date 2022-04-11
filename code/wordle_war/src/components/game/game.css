@@ -55,11 +55,59 @@ html, body {
 	border: 2px solid #e2e5e9;
   }
 
+  .chat{
+
+  }
+
   .chatroom-btn{
 	position: absolute;
     bottom: 2%;
     left: 2%;
 	z-index: 100;
+  }
+
+  .chatroom-header{
+    background-color: var(--background-color);
+    color: var(--color);
+    border: 1px solid var(--color);
+  }
+
+  .opponent-chat{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .player-chat{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+  }
+
+  .chat{
+    width: fit-content;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    text-align: left;
+  }
+
+  .player-chat .chat{
+    background: darkgray;
+  }
+
+  .opponent-chat .chat{
+    background: dodgerblue;
+  }
+  .chat-input{
+    border: 1px solid var(--color);
+    color: var(--color);
+    display: flex;
+  }
+
+  .chat-input input{
+    width: 100%;
+    border: 1px solid var(--color);
   }
   
   .loading{
@@ -68,7 +116,7 @@ html, body {
   }
 
   .popup-chatroom{
-	background-color: var(--color);
+    background-color: var(--background-color);
     color: var(--background-color);
     box-shadow: 0 0 9px 0 var(--color);
     position: absolute;

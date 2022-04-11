@@ -55,7 +55,6 @@ class MultiGame extends React.Component {
         this.toggleChatRoom = this.toggleChatRoom.bind(this);
         //this.setState({keyword:props.word,letter_count:props.word.length});
         
-        
 
         //inital the 6*5 game board with null
         this.state.userfill = Array(this.state.row_count).fill(null);
@@ -117,7 +116,6 @@ class MultiGame extends React.Component {
         });
 
     }
-
     //update one block letter and state using row and col
     updateBlock(row, col, letter, state) {
         console.log("updateBlock(" + row + "," + col + ") to " + letter);
@@ -349,10 +347,26 @@ class MultiGame extends React.Component {
 </div>
 
 {this.state.isChatroomShow && <div className='popup-chatroom'>
-    chatroom<br/>
-    {Server.getChatList()}<br/>
-    <input type="text"></input>
-</div>}*/
+    <div className='chatroom-header'>CHATROOM</div>
+    
+    <div className='opponent-chat'>
+        <div className='chat'>hi loser</div>
+    </div>
+    <div className='opponent-chat'>
+        <div className='chat'>hihi\nloser</div>
+    </div>
+    <div className='player-chat'>
+        <div className='chat'>you you you you</div>
+    </div>
+    <div className='opponent-chat'>
+        <div className='chat'>just
+        child</div>
+    </div>
+    <div className='chat-input'>
+        <input type="text"></input>
+        <button>Submit</button>
+    </div>
+</div>}<br/>*/
 
 export default class GameRoom extends React.Component {
 

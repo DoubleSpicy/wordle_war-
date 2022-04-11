@@ -62,11 +62,12 @@ app.use('/refresh', require('./routes/refresh')); // ok
 app.use('/logout', require('./routes/logout')); //ok
 app.use('/userChangePassword', require('./routes/userChangePassword')); 
 app.use('/testEmail', require('./routes/testEmail')); // ok
-
+app.use('/game', require('./routes/api/game'));
 
 app.use(verifyJWT);
 app.use('/employees', require('./routes/api/employees'));
 app.use('/users', require('./routes/api/users'));
+
 
 
 app.all('*', (req, res) => {
@@ -106,20 +107,29 @@ class Server {
                     if(this.onlineplayers.length > 0){
                         var opponent = this.onlineplayers.pop();
                         console.log("New Game Room: "+socket.io+'|'+opponent);
-                        //var answers = require('./word').;
+
+                        /*try {
+                            const response = await axios.get('/game/1231',
+                                {
+                                    headers: { 'Content-Type': 'application/json' },
+                                    withCredentials: true
+                                }
+                            );
+                            console.log("response",response);
+                        } catch (err) {
+                
+                        }*/
+                        //get answers from random
                         console.log('answers',answers);
                         var answer = answers[Math.floor(Math.random() * answers.length)];
                         console.log("keyword: "+answer);
+
+
                         io.to(opponent).emit('gameRoom', {word:answer,opponentId:socket.id});
                         socket.emit('gameRoom', {word:answer,opponentId:opponent});
 
-                        var opponentSocket = io.sockets.sockets.get(opponent);
 
-                        /*socket.on('exitRoom',(data)=>{
-                            console.log('(exitRoom) one of player exit room,',socket.id);
-                            socket.removeAllListeners('submitWord');
-                            io.to(opponent).emit('opponentExitRoom',{});
-                        });*/
+                        var opponentSocket = io.sockets.sockets.get(opponent);
                         socket.on('submitWord',(data)=>{
                             console.log('(submitWord)',data);
                             io.to(opponent).emit('opponentState',{row:data.row,word:data.word});
@@ -130,11 +140,6 @@ class Server {
                             io.to(opponent).emit('receivedChat',data.msg);
                             
                         });
-                        /*opponentSocket.on('exitRoom',(data)=>{
-                            console.log('(exitRoom) one of player exit room,',opponent);
-                            opponentSocket.removeAllListeners('submitWord');
-                            socket.emit('opponentExitRoom',{});
-                        });*/
                         opponentSocket.on('submitWord',(data)=>{
                             console.log('(submitWord)',data);
                             socket.emit('opponentState',{row:data.row,word:data.word});
