@@ -60,7 +60,8 @@ app.use('/register', require('./routes/register')); //ok
 app.use('/auth', require('./routes/auth')); // ok
 app.use('/refresh', require('./routes/refresh')); // ok
 app.use('/logout', require('./routes/logout')); //ok
-app.use('/userChangePassword', require('./routes/userChangePassword')); 
+app.use('/userChangePassword', require('./routes/userChangePassword'));  //ok
+app.use('/adminChangePassword', require('./routes/adminChangePassword')); 
 app.use('/testEmail', require('./routes/testEmail')); // ok
 app.use('/game', require('./routes/api/game'));
 app.use('/admin', require('./routes/admin')); //ok

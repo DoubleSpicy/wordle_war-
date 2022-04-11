@@ -21,7 +21,7 @@ const handleChangePassword = async (req, res) => {
 
         //create and store the new user
         const hashedPwd = await bcrypt.hash(pwd, 10);
-        const pwUpdate = await User.update({ _id: checkUserExist._id }, { password: pwd });
+        const pwUpdate = await User.update({ _id: checkUserExist._id }, { password: hashedPwd });
 
         return res.json({ message: 'Password has been reseted!' });
 
@@ -31,3 +31,5 @@ const handleChangePassword = async (req, res) => {
 }
 
 module.exports = { handleChangePassword };
+
+
