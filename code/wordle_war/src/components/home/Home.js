@@ -7,7 +7,9 @@ const Home = () => {
     const logout = async () => {
         navigate('/main');
     }
-
+    const toAdmin = ()=>{
+        window.location.href='http://localhost:3500/admin';
+    }
     return (
 
         <div className="center">
@@ -26,7 +28,8 @@ const Home = () => {
                 <br />
                 <Link to="/editor">Go to the Editor page</Link>
                 <br />
-                <Link to="/admin">Go to the Admin page</Link>
+                {/* <Link to={"http://localhost:3500/admin"}>Go to the Admin page</Link> */}
+                <button onClick={toAdmin}>Go to the Admin Page</button>
                 <br />
                 {/* <Link to="/confirmEmail">Go to confirm Email</Link>
                 <br /> */}
