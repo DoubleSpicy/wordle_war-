@@ -13,6 +13,8 @@ const handleLogin = async (req, res) => {
     if (match) {
         const roles = Object.values(foundUser.roles);
         // create JWTs
+        //to see the secrect item
+        //if after 120s it will logout
         const accessToken = jwt.sign(
             {
                 "UserInfo": {
@@ -21,12 +23,13 @@ const handleLogin = async (req, res) => {
                 }
             },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: '30s' }
+            { expiresIn: '120s' }
         );
+        //login after 1h auto logout
         const refreshToken = jwt.sign(
             { "username": foundUser.username },
             process.env.REFRESH_TOKEN_SECRET,
-            { expiresIn: '1d' }
+            { expiresIn: '1h' }
         );
         // Saving refreshToken with current user
         foundUser.refreshToken = refreshToken;
