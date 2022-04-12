@@ -426,7 +426,7 @@ class Room extends React.Component {
         if(this.state.game_state == 0){
             this.setState({game_state:state});
             var old = parseFloat(this.props.auth.rating).toFixed(1);
-            Server.submitResult(this.props.auth.userid,state,this.props.updateauthref).then(()=>{
+            Server.submitResult(this.props.auth.userid,state,this.props.updateauthref,this.state.keyword).then(()=>{
                 this.setState({
                     rating:{
                         oldR:old,

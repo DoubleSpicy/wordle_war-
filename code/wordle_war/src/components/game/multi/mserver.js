@@ -97,13 +97,14 @@ const Server = {
     /*chat(msg){
         socket.emit('chat', {msg:msg,opponentId:this.opponentId});
     },*/
-    async submitResult(auth,gameState,updateAuthRef){
+    async submitResult(auth,gameState,updateAuthRef,word){
         var rating = {
             userid:auth,
             gameState: gameState,
             rating: this.rating,
             wordrating: this.wordrating,
             opponentrating: this.opponentrating,
+            word:word
         };
         console.log("(submitResult)",rating);
         try {
