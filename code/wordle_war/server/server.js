@@ -104,56 +104,88 @@ class Server {
         io.on('connection', socket => {
 
             console.log('user in',socket.id)
-            socket.on('waitRoom', id => {
-                console.log('(waitRoom): '+socket.id);
-                if(!this.onlineplayers.includes(socket.id)){
+            socket.on('waitRoom', data => {
+                console.log('(waitRoom): '+socket.id+"(keyword: "+data.keyword?.words+")");
+                if(!this.onlineplayers.filter(p => p.socketid == socket.id).length > 0){
                     if(this.onlineplayers.length > 0){
                         var opponent = this.onlineplayers.pop();
-                        console.log("New Game Room: "+socket.io+'|'+opponent);
+                        console.log("New Game Room: "+socket.id+'|'+opponent.socketid);
 
-                        /*try {
-                            const response = await axios.get('/game/1231',
-                                {
-                                    headers: { 'Content-Type': 'application/json' },
-                                    withCredentials: true
-                                }
-                            );
-                            console.log("response",response);
-                        } catch (err) {
-                
-                        }*/
-                        //get answers from random
-                        console.log('answers',answers);
-                        var answer = answers[Math.floor(Math.random() * answers.length)];
-                        console.log("keyword: "+answer);
+                        var player_keyword;
+                        if(opponent.keyword == undefined){
+                            //get answers from random
+                            player_keyword = answers[Math.floor(Math.random() * answers.length)];
+                            console.log('player answers',player_keyword);
+                        }else{
+                            player_keyword = data.keyword;
+                            console.log('player answers (rating)',player_keyword);
+                        }
+                        var opponent_keyword;
+                        if(opponent.keyword == undefined){
+                            //get answers from random
+                            opponent_keyword = answers[Math.floor(Math.random() * answers.length)];
+                            console.log('opponent answers',opponent_keyword);
+                        }else{
+                            opponent_keyword = opponent.keyword;
+                            console.log('opponent answers (rating)',opponent_keyword);
+                        }
+                        
 
 
-                        io.to(opponent).emit('gameRoom', {word:answer,opponentId:socket.id});
-                        socket.emit('gameRoom', {word:answer,opponentId:opponent});
+                        io.to(opponent.socketid).emit('gameRoom', {
+                            word:opponent_keyword.words,
+                            opponent:{
+                                socketid:socket.id,
+                                rating:data.rating
+                            }
+                        });
+                        socket.emit('gameRoom', {
+                            word:player_keyword.words,
+                            opponent:{
+                                socketid:opponent.socketid,
+                                rating:opponent.rating
+                            }
+                        });
 
 
-                        var opponentSocket = io.sockets.sockets.get(opponent);
+                        var opponentSocket = io.sockets.sockets.get(opponent.socketid);
+
                         socket.on('submitWord',(data)=>{
                             console.log('(submitWord)',data);
-                            io.to(opponent).emit('opponentState',{row:data.row,word:data.word});
-                            
-                        });
-                        socket.on('chat',(data)=>{
-                            console.log('(chat) player('+socket.id+'):',data.msg);
-                            io.to(opponent).emit('receivedChat',data.msg);
+                            io.to(opponent.socketid).emit('opponentState',{row:data.row,word:data.word});
                             
                         });
                         opponentSocket.on('submitWord',(data)=>{
                             console.log('(submitWord)',data);
                             socket.emit('opponentState',{row:data.row,word:data.word});
                         });
-                        opponentSocket.on('chat',(data)=>{
-                            console.log('(chat) player('+opponent+'):',data.msg);
-                            socket.emit('opponentState',{row:data.row,word:data.word});
+
+                        socket.on('submitResult',(data)=>{
+                            console.log('(submitResult)',data);
+                            
                         });
+                        opponentSocket.on('submitResult',(data)=>{
+                            console.log('(submitResult)',data);
+                        });
+                        
+                        
+                        /*socket.on('chat',(data)=>{
+                            console.log('(chat) player('+socket.id+'):',data.msg);
+                            io.to(opponent.socketid).emit('receivedChat',data.msg);
+                            
+                        });*/
+                        /*opponentSocket.on('chat',(data)=>{
+                            console.log('(chat) player('+opponent.socketid+'):',data.msg);
+                            socket.emit('opponentState',{row:data.row,word:data.word});
+                        });*/
 
                     }else{
-                        this.onlineplayers.push(socket.id);
+                        this.onlineplayers.push({
+                            socketid:socket.id,
+                            userid:data.userid,
+                            keyword:data.keyword,
+                            rating:data.rating
+                        });
                     }
                     socket.once('closeWaitRoom',(data)=>{
                         console.log('(closeWaitRoom)',data);
