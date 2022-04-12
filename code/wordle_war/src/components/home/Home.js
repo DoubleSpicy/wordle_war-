@@ -25,8 +25,8 @@ const Home = () => {
                     
                     Win Rate: {
                         (Math.ceil((parseFloat(auth.wincount)/
-                        (parseFloat(auth.wincount)+parseFloat(auth.losecount)) * 10000))/100)+'%'
-                    } (Wins: {parseFloat(auth.wincount)},Losses: {parseFloat(auth.losecount)})
+                        (parseFloat(auth.wincount)+parseFloat(auth.losecount)) * 10000))/100) || 0
+                    }% (Wins: {parseFloat(auth.wincount)},Losses: {parseFloat(auth.losecount)})
                 </div>
                 <br />
                 <p>You are logged in!</p>

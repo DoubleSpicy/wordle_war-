@@ -122,6 +122,19 @@ class MultiGame extends React.Component {
         });
 
     }
+    componentWillUnmount(){
+        console.log("componentWillUnmount()");
+        this.setState({
+            current_row: 0,
+            current_index: 0,
+            row_count: 6,
+            userfill: null,
+            opponent:{
+                current_row: 0,
+                userfill:null
+            },
+        });
+    }
     //update one block letter and state using row and col
     updateBlock(row, col, letter, state) {
         console.log("updateBlock(" + row + "," + col + ") to " + letter);
@@ -148,7 +161,7 @@ class MultiGame extends React.Component {
     //check one row is not match the answer
     checkMatchKeyword() {
         let row_index = this.state.current_row;
-        Server.submitWords(this.getFullWordOfRow(this.state.current_row),row_index);
+        
         this.state.current_row++;
         this.state.current_index = 0;
         let target_row = this.state.userfill[row_index];
@@ -165,6 +178,7 @@ class MultiGame extends React.Component {
                 this.updateBlock(row_index, i, target_row[i].letter, 'absent');
             }
         }
+        Server.submitWords(this.getFullStateOfRow(row_index),row_index);
         if(correct >= 5){
             this.props.resultdef(this.getResult(this.state.userfill),
                 this.getResult(this.state.opponent.userfill));
@@ -189,6 +203,24 @@ class MultiGame extends React.Component {
         }
         return word;
     }
+    getFullStateOfRow(row) {
+        let word = '';
+        for (var i = 0; i < this.state.letter_count; i++) {
+            switch(this.state.userfill[row][i].state){
+                case 'correct':
+                    word += 'c';
+                    break;
+                case 'present':
+                    word += 'p';
+                    break;
+                case 'absent':
+                    word += 'a';
+                    break;
+            }
+        }
+        console.log('getFullStateOfRow',word);
+        return word;
+    }
 
     opponentChange(data){
         console.log('opponentChange',data)
@@ -198,13 +230,25 @@ class MultiGame extends React.Component {
             var correct = 0;
             for (var i = 0; i < data.word.length; i++) {
                 //console.log(data.word);
-                if (data.word.charAt(i) == this.state.keyword.charAt(i)) {
+                /*if (data.word.charAt(i) == this.state.keyword.charAt(i)) {
                     correct++;
                     this.updateopponentBlock(row_index, i, undefined, 'correct');
                 } else if (this.state.keyword.includes(data.word.charAt(i))) {
                     this.updateopponentBlock(row_index, i, undefined, 'present');
                 } else {
                     this.updateopponentBlock(row_index, i, undefined, 'absent');
+                }*/
+                switch(data.word.charAt(i)){
+                    case 'c':
+                        correct++;
+                        this.updateopponentBlock(row_index, i, undefined, 'correct');
+                        break;
+                    case 'p':
+                        this.updateopponentBlock(row_index, i, undefined, 'present');
+                        break;
+                    case 'a':
+                        this.updateopponentBlock(row_index, i, undefined, 'absent');
+                        break;
                 }
             }
             if(correct >= 5){
@@ -415,6 +459,7 @@ class Room extends React.Component {
             this.setState({loading:false});
         }));
     }
+
 
     updateResult(playerResult,opponentResult){
         this.state.result = {player:playerResult,opponent:opponentResult};
