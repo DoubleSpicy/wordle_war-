@@ -2,12 +2,14 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import useAuth from "../hooks/useAuth";
 
 const UserList = () => {
     const [users, setUsers] = useState();
     const axiosPrivate = useAxiosPrivate();
     const navigate = useNavigate();
     const location = useLocation();
+    const { auth } = useAuth();
 
     useEffect(() => {
         let isMounted = true;
