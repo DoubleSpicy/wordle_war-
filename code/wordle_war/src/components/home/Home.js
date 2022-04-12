@@ -1,6 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useContext } from "react";
 import useAuth from "../hooks/useAuth";
+
 const Home = () => {
     const navigate = useNavigate();
     //return to main page
@@ -10,9 +11,9 @@ const Home = () => {
     const toAdmin = ()=>{
         window.location.href='http://localhost:3500/admin';
     }
-    
+
     const { auth } = useAuth();
-    console.log(auth);
+    console.log("auth",auth);
     return (
 
         <div className="center">
