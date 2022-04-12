@@ -2,8 +2,11 @@ const express = require('express');
 const router = express.Router();
 const gameController = require('../../controllers/gameController');
 
-///:player2
+//
 router.route('/:player1')
-    .get(gameController.createNewGameRoom);
+    .get(gameController.getWordfromRating);
+
+router.route('/rating/update')
+    .post(gameController.updateRating);
 
 module.exports = router;

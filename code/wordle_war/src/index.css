@@ -160,6 +160,13 @@ a:visited {
   flex-grow: 0.5;
 }
 
+.profile{
+  background-color: var(--background-color);
+    color: var(--color);
+    text-align: left;
+    font-size: initial;
+}
+
 /* 
 
 

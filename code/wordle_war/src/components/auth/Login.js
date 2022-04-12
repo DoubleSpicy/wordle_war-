@@ -53,8 +53,12 @@ const Login = () => {
             console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
-            const userid = response?.data?.id;
-            setAuth({ user, pwd, roles, accessToken, userid });
+            const username = response?.data?.username;
+            const userid = response?.data?.userid;
+            const rating = response?.data?.rating;
+            const wincount = response?.data?.wincount;
+            const losecount = response?.data?.losecount;
+            setAuth({ user, pwd, roles, accessToken, userid, username,rating,wincount,losecount });
             setUser('');
             setPwd('');
             // setSuccess(true);

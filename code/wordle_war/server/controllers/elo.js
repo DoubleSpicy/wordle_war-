@@ -2,11 +2,11 @@ const Elo = {
     calcWinrate(ratingPlayer,ratingOppoWord){
         return 1/(1+10^((ratingOppoWord-ratingPlayer)/400))
     },
-    calcNewRating(isWin,ratingPlayer,ratingOppo,ratingWord){
-        isWin = (isWin)? 1:0;
-        return ratingPlayer + 0.05 * (isWin - 
-            Math.sqrt(calcWinrate(ratingPlayer,ratingOppo) * calcWinrate(ratingPlayer,ratingWord)));
+    calcNewRating(gameState,ratingPlayer,ratingOppo,ratingWord){
+        gameState = (gameState == 1)? 4: ((gameState == -1)? 0 : 2);
+        return ratingPlayer + 0.05 * (gameState - 
+            Math.sqrt(this.calcWinrate(ratingPlayer,ratingOppo) * this.calcWinrate(ratingPlayer,ratingWord)));
     }
 };
 
-export default Elo;
+module.exports = Elo;

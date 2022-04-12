@@ -9,6 +9,11 @@ import Server from './mserver';
 import ChatIcon from '@mui/icons-material/Chat';
 import Fab from '@mui/material/Fab';
 import { Button } from '@mui/material';
+import { Link } from "react-router-dom";
+import useRefreshToken from '../../hooks/useRefreshToken';
+import AuthContext from '../../context/AuthProvider';
+import useAuth from "../../hooks/useAuth";
+import { useNavigate, useLocation  } from "react-router-dom";
 
 //call it using <Game />
 
@@ -54,6 +59,7 @@ class MultiGame extends React.Component {
         };
         this.toggleChatRoom = this.toggleChatRoom.bind(this);
         //this.setState({keyword:props.word,letter_count:props.word.length});
+        
         
 
         //inital the 6*5 game board with null
@@ -206,13 +212,19 @@ class MultiGame extends React.Component {
                 this.props.resultdef(this.getResult(this.state.userfill),
                     this.getResult(this.state.opponent.userfill));
                 setTimeout(()=>{
-                    this.props.gamestatedef(0);
+                    this.props.gamestatedef(-1);
                 },1500);
                 //this.props.game_state = -1;
             }
             if(this.state.opponent.current_row >= this.state.row_count){
                 if(!this.checkTie()){
                     this.showPopup("Your opponent use all chances. Hurry up!");
+                }else{
+                    this.props.resultdef(this.getResult(this.state.userfill),
+                    this.getResult(this.state.opponent.userfill));
+                    setTimeout(()=>{
+                        this.props.gamestatedef(0);
+                    },1500);
                 }
                 
             }
@@ -368,7 +380,8 @@ class MultiGame extends React.Component {
     </div>
 </div>}<br/>*/
 
-export default class GameRoom extends React.Component {
+
+class Room extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -382,19 +395,26 @@ export default class GameRoom extends React.Component {
                 player: undefined,
                 opponent: undefined
             },
-            loadUI:false
+            rating:{
+                oldR:1500,
+                newR:1500
+            }
 		};
-        Server.waitRoom((data)=>{
+        this.updateGameState = this.updateGameState.bind(this);
+        this.updateResult = this.updateResult.bind(this);
+
+        
+	}
+    componentDidMount(){
+        Server.waitRoom(this.props.auth.userid,((data)=>{
             console.log('(waitRoom):',data);
             this.state.opponent = data.opponentId;
             this.state.keyword = data.word;
             this.setState({keyword:data.word});
             this.setState({opponent:data.opponentId});
-            this.setState({loadUI:false,loading:false});
-        });
-        this.updateGameState = this.updateGameState.bind(this)
-        this.updateResult = this.updateResult.bind(this)
-	}
+            this.setState({loading:false});
+        }));
+    }
 
     updateResult(playerResult,opponentResult){
         this.state.result = {player:playerResult,opponent:opponentResult};
@@ -405,6 +425,17 @@ export default class GameRoom extends React.Component {
     updateGameState(state){
         if(this.state.game_state == 0){
             this.setState({game_state:state});
+            var old = parseFloat(this.props.auth.rating).toFixed(1);
+            Server.submitResult(this.props.auth.userid,state,this.props.updateauthref).then(()=>{
+                this.setState({
+                    rating:{
+                        oldR:old,
+                        newR:parseFloat(this.props.auth.rating).toFixed(1)
+                    }
+                });
+                console.log(this.state.rating);
+            });
+            
         }
     }
 
@@ -415,9 +446,9 @@ export default class GameRoom extends React.Component {
 		return (
 			<div>
 				{(this.state.loading || this.state.keyword == undefined) && <div className='loading'>
-					Prepare Room
-					<CircularProgress />
-				</div>}
+                        Prepare Room
+                        <CircularProgress />
+                    </div>}
 				{(!this.state.loading && this.state.keyword != undefined) && 
                 <MultiGame resultdef={this.updateResult} 
                     gamestatedef={this.updateGameState} 
@@ -429,15 +460,35 @@ export default class GameRoom extends React.Component {
                         {this.state.game_state == -1 && "You Lose!"}
                         {this.state.game_state == 2 && "Tie!"}
                         <br/>
+                        Your rating: {this.state.rating.oldR} → {this.state.rating.newR}<br/>
                         Answer: {this.state.keyword}<br/>
                         Player Result<br/>
                         {this.state.result.player}
                         Opponent Result<br/>
                         {this.state.result.opponent}
-                        <Button href="/">exit</Button>
+                        <Link to={this.props.leaveref}>EXIT</Link>
                     </div>
                 </div>}
 			</div>
 		);
 	}
 }
+
+const GameRoom = ()=>{
+    const { auth,setAuth } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    console.log(auth);
+    console.log('from:',from);
+    const updateAuth = (rating,wincount,losecount)=>{
+        var copy = JSON.parse(JSON.stringify(auth))
+        copy.rating = rating;
+        copy.wincount = wincount;
+        copy.losecount = losecount;
+        setAuth(copy);
+    }
+    return <Room auth={auth} leaveref={from} updateauthref={updateAuth}/>
+}
+
+export default GameRoom;

@@ -1,50 +1,57 @@
 const User = require('../model/User');
+const Elo = require('./elo');
 //import Elo from './elo';
 
 //{player1 : player1id, player2 : player2id}
-const createNewGameRoom =  async (req, res) => {
+const getWordfromRating =  async (req, res) => {
     if (!req?.params?.player1) return res.status(400).json({ "message": 'Player1 ID required' });
-    if (!req?.params?.player2) return res.status(400).json({ "message": 'Player2 ID required' });
-    const player1 = await User.findOne({ _id: req.params.id }).exec();
+    //if (!req?.params?.player2) return res.status(400).json({ "message": 'Player2 ID required' });
+    const player1 = await User.findOne({ _id: req?.params?.player1 }).exec();
     if (!player1) {
         return res.status(204).json({ 'message': `User ID ${req.params.player1} not found` });
     }
-    const player2 = await User.findOne({ _id: req.params.id }).exec();
+    /*const player2 = await User.findOne({ _id: player2 }).exec();
     if (!player2) {
         return res.status(204).json({ 'message': `User ID ${req.params.player2} not found` });
-    }
-    console.log("createNewGameRoom");
+    }*/
+    console.log("getWordfromRating");
     var player1keyword = getWordByRating(player1.rating);
-    var player2keyword = getWordByRating(player2.rating);
-    res.json([
-        {player: layer1, keyword: player1keyword},
-        {player: layer2, keyword: player2keyword},
-    ]);
+    console.log("player1keyword",player1keyword);
+    //var player2keyword = getWordByRating(player2.rating);
+    res.json({player: player1, keyword: player1keyword,rating: player1.rating,wordrating:player1keyword.difficulty});
     
 }
 
-//{player : ratingPlayer, opponent: ratingOppo, word: ratingWord, isWin: true/false }
-/*const updateRating =  async (req, res) => {
-    const { player, opponent,word,isWin } = req.body;
-    if (!player || !opponent || !word || !isWin) return res.status(400).json({ 'message': 'Rating are required.' });
-    var newrating = Elo.calcNewRating(isWin,player, opponent,word);
-    const user = await User.findOne({ _id: req.params.id }).exec();
+/*var rating = {
+    userid:auth,
+    gameState: gameState,
+    rating: this.rating,
+    wordrating: this.wordrating,
+    opponentrating: this.opponentrating,
+};*/
+const updateRating =  async (req, res) => {
+    const { userid,gameState, rating,wordrating,opponentrating } = req.body;
+    console.log(req.body);
+    if (!userid) return res.status(400).json({ 'message': 'userid are required.' });
+    if (!gameState || !rating || !wordrating || !opponentrating) return res.status(400).json({ 'message': 'Rating are required.' });
+    var newrating = Elo.calcNewRating(gameState,rating, wordrating,opponentrating);
+    const user = await User.findOne({ _id: userid }).exec();
     if (!user) {
         return res.status(204).json({ 'message': `User ID ${req.params.id} not found` });
     }
-    const filter = { id: user.id };
+    const filter = { id: userid };
     const update = { rating : newrating};
-    if(isWin){
+    if(gameState == 1){
         update["wincount"] = user.wincount+1;
-    }else{
+    }else if(gameState == -1){
         update["losecount"] = user.losecount+1;
     }
-
-    let doc = await Character.findOneAndUpdate(filter, update, {
+    console.log(update);
+    let doc = await User.findOneAndUpdate(filter, update, {
         new: true
     });
     res.json(doc);
-}*/
+}
 
 
 const fs = require("fs");
@@ -56,7 +63,7 @@ const getWordByRating = (rating)=>{
         return Math.abs(b.difficulty - rating) < Math.abs(a.difficulty - rating) ? b : a;
     });
 
-    console.log(closest);
+    return closest;
 }
 
 const getWordList = ()=>{
@@ -83,5 +90,5 @@ const getWordList = ()=>{
 }
 
 module.exports = {
-    createNewGameRoom
+    getWordfromRating,updateRating
 }

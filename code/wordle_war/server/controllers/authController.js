@@ -37,9 +37,13 @@ const handleLogin = async (req, res) => {
         console.log(result);
 
         const userid = foundUser._id;
+        const username = foundUser.username;
+        const rating = foundUser.rating || 1500;
+        const wincount = foundUser.wincount || 0;
+        const losecount = foundUser.losecount || 0;
 
         res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 }); //secure: true, 
-        res.json({ roles, accessToken, userid });
+        res.json({ roles, accessToken,username, userid,rating,wincount,losecount });
     } else {
         res.sendStatus(401);
     }

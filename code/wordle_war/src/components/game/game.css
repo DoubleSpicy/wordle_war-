@@ -188,6 +188,10 @@ html, body {
     white-space: break-spaces;
     overflow: auto;
   }
+
+  .dialog a, .dialog a:visited {
+    color: var(--color);
+  }
   
   .block .front,
   .block .back {
@@ -265,4 +269,9 @@ html, body {
   .absent {
 	  background-color: #82918b !important;
   }
+
   
+  
+  @media screen and (min-width: 768px){
+    
+  }
