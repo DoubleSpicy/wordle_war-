@@ -30,10 +30,11 @@ const getWordfromRating =  async (req, res) => {
     opponentrating: this.opponentrating,
 };*/
 const updateRating =  async (req, res) => {
-    const { userid,gameState, rating,wordrating,opponentrating } = req.body;
+    const { userid,gameState, rating,wordrating,opponentrating,word } = req.body;
     console.log(req.body);
     if (!userid) return res.status(400).json({ 'message': 'userid are required.' });
     if (!gameState || !rating || !wordrating || !opponentrating) return res.status(400).json({ 'message': 'Rating are required.' });
+
     var newrating = Elo.calcNewRating(gameState,rating, wordrating,opponentrating);
     const user = await User.findOne({ _id: userid }).exec();
     if (!user) {
@@ -46,6 +47,8 @@ const updateRating =  async (req, res) => {
     }else if(gameState == -1){
         update["losecount"] = user.losecount+1;
     }
+    var newwordrating = Elo.calcNewWordRating(gameState,wordrating,rating);
+    updateWordList(word,newwordrating);
     console.log(update);
     let doc = await User.findOneAndUpdate(filter, update, {
         new: true
@@ -56,6 +59,24 @@ const updateRating =  async (req, res) => {
 
 const fs = require("fs");
 const path = require('path');
+
+const updateWordList = (word,newrating)=>{
+    var filePath = path.join(__dirname, 'words_lognormal.csv');
+    var allFileContents = fs.readFileSync(filePath, 'utf-8');
+    var result = "";
+    allFileContents.split(/\r?\n/).forEach(line =>  {
+        var arr = line.split(',');
+        if(arr[1]+arr[2]+arr[3]+arr[4]+arr[5] == word){
+            console.log(line);
+            var output = arr[0]+','+arr[1]+','+arr[2]+','+arr[3]+','+arr[4]+','+arr[5]+','+newrating;
+            result += output;
+
+        }else{
+            result += line+'\n';
+        }
+    });
+    fs.writeFileSync(path.join(__dirname, 'words_lognormal.csv'), result);
+}
 
 const getWordByRating = (rating)=>{
     var wordlist = getWordList();
