@@ -4,14 +4,14 @@ const AdminBroExpress = require('@admin-bro/express');
 
 
 const user = require('../model/User');
-const Admin = require('../model/Admin');
+//const Admin = require('../model/Admin');
 const pending_users = require('../model/pending-users');
 const resetAccounts = require('../model/resetAccount');
 
 AdminBro.registerAdapter(AdminBroMongoose);
 const AdminBroOptions = {
     
-    resources: [user,pending_users,Admin,resetAccounts],
+    resources: [user,pending_users,resetAccounts],
     rootPath: '/admin',
     branding: {
       companyName: 'Avalanche',
