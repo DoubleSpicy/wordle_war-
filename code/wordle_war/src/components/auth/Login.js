@@ -59,6 +59,7 @@ const Login = () => {
             const wincount = response?.data?.wincount;
             const losecount = response?.data?.losecount;
             const photo = response?.data?.photo;
+            console.log("photo", photo)
             setAuth({ user, pwd, roles, accessToken, userid, username,rating,wincount,losecount,photo });
             setUser('');
             setPwd('');
@@ -99,7 +100,7 @@ const Login = () => {
 
                         <label htmlFor="password">Password:</label>
                         <input
-                            type="password"
+                            type="text"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}

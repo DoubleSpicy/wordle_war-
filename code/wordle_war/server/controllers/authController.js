@@ -1,4 +1,5 @@
 const User = require('../model/User');
+const pendingUser = require('../model/pending-users');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -7,6 +8,7 @@ const handleLogin = async (req, res) => {
     if (!user || !pwd) return res.status(400).json({ 'message': 'Username and password are required.' });
 
     const foundUser = await User.findOne({ username: user }).exec();
+
     if (!foundUser) return res.sendStatus(401); //Unauthorized 
     // evaluate password 
     const match = await bcrypt.compare(pwd, foundUser.password);
@@ -36,14 +38,16 @@ const handleLogin = async (req, res) => {
         const result = await foundUser.save();
         console.log(result);
 
+       
         const userid = foundUser._id;
         const username = foundUser.username;
         const rating = foundUser.rating || 1500;
         const wincount = foundUser.wincount || 0;
         const losecount = foundUser.losecount || 0;
+        const photo = foundUser.photo;
 
         res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 }); //secure: true, 
-        res.json({ roles, accessToken,username, userid,rating,wincount,losecount });
+        res.json({ roles, accessToken, username, userid, rating, wincount, losecount, photo });
     } else {
         res.sendStatus(401);
     }

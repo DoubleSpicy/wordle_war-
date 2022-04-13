@@ -8,6 +8,10 @@ router.route('/')
     .get(verifyRoles(ROLES_LIST.Admin), usersController.getAllUsers)
     .delete(verifyRoles(ROLES_LIST.Admin), usersController.deleteUser);
 
+
+router.route('/photo')
+    .get(verifyRoles(ROLES_LIST.Admin), usersController.getPhoto);
+
 router.route('/:id')
     .get(verifyRoles(ROLES_LIST.Admin), usersController.getUser);
 
