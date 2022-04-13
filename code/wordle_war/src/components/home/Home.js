@@ -33,19 +33,22 @@ const Home = () => {
                 <br />
                 <h3>private (with login)</h3>
                 <br />
-                <Link to="/setting">Go to the setting</Link>
-                <br />
-                <Link to="/game">Go to the game page</Link>
-                <br />
-                <Link to="/mgame">Go to the Mutiplay game page</Link>
-                <br />
-                <Link to="/editor">Go to the Editor page</Link>
-                <br />
-                {/* <Link to={"http://localhost:3500/admin"}>Go to the Admin page</Link> */}
-                <button onClick={toAdmin}>Go to the Admin dashboard</button>
-                <br />
-                <Link to="/admin">Go to the Admin page</Link>
-                <br />
+                <div id="navList">
+                    <Link to="/game">Single Player Game</Link>
+                    <br />
+                    <Link to="/mgame">Multiplayer Game</Link>
+                    <br />
+                    <Link to="/setting">Profile Setting</Link>
+                    <br />
+                    <Link to="/editor">Go to the Editor page</Link>
+                    <br />
+                    {/* <Link to={"http://localhost:3500/admin"}>Go to the Admin page</Link> */}
+                    <button onClick={toAdmin}>Go to the Admin dashboard</button>
+                    <br />
+                    <Link to="/admin">Admin page</Link>
+                    <br />
+                </div>
+                
                 {/* <Link to="/confirmEmail">Go to confirm Email</Link>
                 <br /> */}
                 <div className="flexGrow">
