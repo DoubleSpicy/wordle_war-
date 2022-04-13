@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import useAuth from "../hooks/useAuth";
 
 import axios from '../../api/axios';
@@ -20,6 +20,14 @@ const Home = () => {
         reader.onload = () => resolve(reader.result);
         reader.onerror = error => reject(error);
     });
+    const [msg, setMsg] = useState('');
+    const popup = (msg) => {
+        setMsg(msg);
+        setTimeout(()=>{
+            setMsg('');
+        },2000);
+        
+    };
     const handleFileChange = async () => {
         const file = document.querySelector('#newFile').files[0];
         console.log(file);
@@ -29,6 +37,7 @@ const Home = () => {
         var copy = JSON.parse(JSON.stringify(auth))
         copy.photo = photo;
         setAuth(copy);
+        popup('image uploaded!');
         /*var req = {
             userid:auth.userid,
             photo: photo
@@ -52,6 +61,7 @@ const Home = () => {
         <div className="center-container">
         <div className="center">
             <section>
+                
                 <div className="title-container">Home</div>
                 <br />
                 <p>You are logged in!</p>
@@ -62,9 +72,11 @@ const Home = () => {
                         Profile Photo
                         {auth.photo && <img id="profilePhoto" src={auth.photo} />}
                         {!auth.photo && <img id="profilePhoto" src={DefaultImage} />}
+                        
                         <div className="uploadPhoto-container">
                             Upload new image<input type="file" id="newFile" onChange={handleFileChange} />
                         </div>
+                        {msg != "" && <div className="errmsg">{msg}</div>}
                     </div>
                     <i>User {auth.username}</i><br />
                     Rating: {parseFloat(auth.rating).toFixed(1)} <br />
