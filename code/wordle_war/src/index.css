@@ -24,6 +24,9 @@
   --section-color: rgba(255, 255, 255, 0.4);
 }
 
+input[type=text],input[type=password]{
+  color: black;
+}
 
 html {
   font-family: "Neue Helvetica", sans-serif;
