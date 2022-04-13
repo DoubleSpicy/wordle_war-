@@ -45,7 +45,7 @@ const ResetPassword = () => {
 
 
     return (
-        <div class="center">
+        <div className="center">
 
             {success ? (
                 <section>

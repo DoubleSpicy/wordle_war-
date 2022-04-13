@@ -5,6 +5,16 @@ import Setting from './header/Setting'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import useDarkMode from "use-dark-mode";
 
+//UI
+import Button from '@mui/material/Button';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import SettingsIcon from '@mui/icons-material/Settings';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import CloseIcon from '@mui/icons-material/Close';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+
 import Container from 'react-bootstrap/Container';
 import { Nav } from 'react-bootstrap';
 
@@ -21,9 +31,13 @@ export default function Header() {
         <div>
             <header>
                 <div className="header_left" >
-                    <button onClick={() => toggleShowInfo(!showInfo)}>
-                        info: {showInfo ? "show1" : "hide1"}
-                    </button>
+                    <Button onClick={() => toggleShowInfo(!showInfo)}>
+                        
+                        <HelpOutlineIcon />
+                        <div className="expand">
+                            {showInfo ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
+                        </div>
+                    </Button>
 
                 </div>
                 <div className="header_logo" >
@@ -32,18 +46,26 @@ export default function Header() {
                 <div className="header_right">
                     <div>
                         {" "}
-                        <button onClick={() => toggleShowdarkMode(!showdarkMode)}>
-                            {showdarkMode ? <p onClick={darkMode.enable}>☀</p> : <p onClick={darkMode.disable}>☾</p>}
+                        <Button onClick={() => {
+                            toggleShowdarkMode(!showdarkMode);
+                            if(showdarkMode){
+                                darkMode.enable();
+                            }else{
+                                darkMode.disable();
+                            }
+                        }}>
+                        {showdarkMode ? <LightModeIcon/> : <DarkModeIcon/>}
 
-                        </button>{" "}
+                        </Button>{" "}
+
 
 
                     </div>
                     <div>
                         {" "}
-                        <button onClick={() => toggleShowSetting(!showSetting)}>
-                            info: {showSetting ? "setting" : "setting=C"}
-                        </button>{" "}
+                        <Button onClick={() => toggleShowSetting(!showSetting)}>
+                            <SettingsIcon/>
+                        </Button>{" "}
 
                     </div>
                 </div>
@@ -53,12 +75,12 @@ export default function Header() {
             {showInfo && (
                 <div className="PopUp">
                     {" "}
-                    <button
+                    <Button
                         className="popup-x"
                         onClick={() => toggleShowInfo(!showInfo)}
                     >
-                        X
-                    </button>
+                        <CloseIcon />
+                    </Button>
                     <Tutorial />
                 </div>
             )}
@@ -67,12 +89,12 @@ export default function Header() {
             {showSetting && (
                 <div className="PopUp">
                     {" "}
-                    <button
+                    <Button
                         className="popup-x"
                         onClick={() => toggleShowSetting(!showSetting)}
                     >
-                        X
-                    </button>
+                        <CloseIcon />
+                    </Button>
                     <Setting />
 
                 </div>

@@ -4,7 +4,7 @@ import AdminChangePw from "./adminChangePw";
 // import Refresh from "./refresh"
 const Admin = () => {
     return (
-        <div class="center">
+        <div className="center">
             <section>
                 <h1>Admins Page</h1>
                 <br />

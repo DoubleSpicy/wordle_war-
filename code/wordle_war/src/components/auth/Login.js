@@ -78,7 +78,7 @@ const Login = () => {
     }
 
     return (
-        <div class="center">
+        <div className="center">
             
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
@@ -189,7 +189,7 @@ export default Login
 //                 value={pwd}
 //                 required
 //             />
-//             <button type="button" class="btn btn-primary btn-lg" >Sign In</button>
+//             <button type="button" className="btn btn-primary btn-lg" >Sign In</button>
 //         </form>
 //         <p>
 //             Need an Account?<br />
