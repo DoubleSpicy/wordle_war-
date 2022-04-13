@@ -59,6 +59,10 @@ body {
   text-align: center
 }
 
+.center-container{
+
+}
+
 
 .PopUp {
   width: 100%;
@@ -117,6 +121,11 @@ form {
   width: 100%;
   display: block;
   color: var(--background-color);
+}
+
+.title-container{
+  font-size: larger;
+  border-bottom: 2px solid var(--color);
 }
 
 a,
@@ -193,7 +202,24 @@ a:visited {
   padding: 5px;
 }
 
-@media screen and (max-width: 420px){
+.profile img{
+  width: 50%;
+  margin: auto;
+}
+
+.profilePhoto-container{
+  border: 2px solid var(--color);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.uploadPhoto-container{
+  background: antiquewhite;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 520px){
 
   .header_logo a, .header_logo a:visited {
     font-size: x-small;
@@ -215,18 +241,23 @@ a:visited {
 
 }
 
-@media screen and (min-width: 420px){
+@media screen and (min-width: 460px){
 
   .center {
     margin-left: auto;
     margin-right: auto;
     width: 20em
   }
-
-  
-
 }
 
+@media screen and (min-width: 520px){
+  .center-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color: var(--section-color);
+  }
+}
 /* 
 
 
