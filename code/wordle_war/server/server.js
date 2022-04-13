@@ -109,10 +109,11 @@ class Server {
                 if(!this.onlineplayers.filter(p => p.socketid == socket.id).length > 0){
                     if(this.onlineplayers.length > 0){
                         var opponent = this.onlineplayers.pop();
+                        console.log("Now online: ",this.onlineplayers);
                         console.log("New Game Room: "+socket.id+'|'+opponent.socketid);
 
                         var player_keyword;
-                        if(opponent.keyword == undefined){
+                        if(data.keyword == undefined){
                             //get answers from random
                             player_keyword = answers[Math.floor(Math.random() * answers.length)];
                             console.log('player answers',player_keyword);
@@ -152,21 +153,21 @@ class Server {
 
                         socket.on('submitWord',(data)=>{
                             console.log('(submitWord)',data);
-                            io.to(opponent.socketid).emit('opponentState',{row:data.row,word:data.word});
+                            io.to(opponent.socketid).emit('opponentState',{row:data.row,word:data.word,board:data.board});
                             
                         });
                         opponentSocket.on('submitWord',(data)=>{
                             console.log('(submitWord)',data);
-                            socket.emit('opponentState',{row:data.row,word:data.word});
+                            socket.emit('opponentState',{row:data.row,word:data.word,board:data.board});
                         });
 
-                        socket.on('submitResult',(data)=>{
+                        /*socket.on('submitResult',(data)=>{
                             console.log('(submitResult)',data);
                             
                         });
                         opponentSocket.on('submitResult',(data)=>{
                             console.log('(submitResult)',data);
-                        });
+                        });*/
                         
                         
                         /*socket.on('chat',(data)=>{
@@ -186,12 +187,13 @@ class Server {
                             keyword:data.keyword,
                             rating:data.rating
                         });
+                        console.log("Now online: ",this.onlineplayers);
                     }
-                    socket.once('closeWaitRoom',(data)=>{
-                        console.log('(closeWaitRoom)',data);
-                        console.log("A player leave waiting room:"+socket.id);
-                        delete this.onlineplayers.pop(socket.id);
-                        
+                    socket.on('cleanServer',(data)=>{
+                        socket.removeAllListeners("submitWord");
+                        socket.removeAllListeners("submitResult");
+                        delete this.onlineplayers.pop(this.onlineplayers.filter(p => p.socketid == socket.id)[0]);
+                        socket.removeAllListeners('cleanServer');
                     });
                 }else{
                     console.log('(waitRoom): user exist: '+socket.id);
