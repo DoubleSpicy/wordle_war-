@@ -64,17 +64,20 @@ const Server = {
     /*closeWaitRoom(){
         socket.emit('closeWaitRoom', '');
     },*/
-    receiveOpponentState(){
+    receiveOpponentState(ref){
         this.opponentRow = -1;
-        this.chatList = [];
+        //this.chatList = [];
         socket.off('opponentState');
         console.log("receiveOpponentState()");
         socket.on('opponentState',data => {
-            
-            if(this.opponentRow < data.row){
+            //console.log('(opponentState): ',data);
+            //ref(data);
+            //EventBus.dispatch('opponentState',data);
+            if(this.opponentRow < data.row && data.row - this.opponentRow == 1){
                 this.opponentRow = data.row;
                 console.log('(opponentState): ',data);
-                EventBus.dispatch('opponentState',data);
+                ref(data);
+                
             }
             
         });
@@ -91,7 +94,8 @@ const Server = {
     getChatList(){
         return this.chatList;
     },*/
-    submitWords(word,row){
+    submitWords(word,row,board){
+        console.log('submitWord',{row:row,word:word,opponentId:this.opponentId});
         socket.emit('submitWord', {row:row,word:word,opponentId:this.opponentId});
     },
     /*chat(msg){
@@ -111,8 +115,7 @@ const Server = {
             const response = await axios.post('/game/rating/update',
                 JSON.stringify(rating),
                 {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
+                    headers: { 'Content-Type': 'application/json' }
                 }
             );
             console.log("response",response);
@@ -121,10 +124,13 @@ const Server = {
         } catch (err) {
             console.log("submitResult fail",err);
         }
-    }
+    },
+    clearServer(){
+        socket.emit('cleanServer',{});
+    },
     /*suddenExitRoom(){
 
-        socket.emit('exitRoom', {opponentId:this.opponentId});
+        socket.emit('closeWaitRoom', {});
     }*/
 };
 
