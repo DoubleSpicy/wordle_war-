@@ -44,7 +44,7 @@ const updateRating =  async (req, res) => {
     console.log(userid+" user.wincount",user.wincount);
     console.log(userid+" user.losecount",user.losecount);
 
-    const filter = { id: userid };
+    const filter = { _id: userid };
     const update = { rating : newrating};
     if(gameState == 1){
         update["wincount"] = user.wincount+1;

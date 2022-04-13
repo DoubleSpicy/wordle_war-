@@ -107,10 +107,10 @@ form {
   padding-bottom: 1rem;
 }
 
-.center {
-  margin-left: auto;
-  margin-right: auto;
-  width: 20em
+.errmsg{
+  background: var(--color);
+  color: var(--background-color);
+  box-shadow: 0px 0px 10px 0px var(--color);
 }
 
 .errmsg{
@@ -212,8 +212,47 @@ a:visited {
 
 .profile{
   background-color: var(--background-color);
-    color: var(--color);
-    text-align: left;
+  color: var(--color);
+  text-align: left;
+  font-size: initial;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.profile img{
+  width: 40%;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.profilePhoto-container{
+  border: 2px solid var(--color);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.uploadPhoto-container{
+  background: antiquewhite;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 520px){
+
+  .header_logo a, .header_logo a:visited {
+    font-size: x-small;
+  }
+
+  .header_logo button {
+    padding: 0;
+  }
+
+  .expand{
+    display: none;
+  }
+
+  .keyboard-row span{
     font-size: initial;
     border-radius: 5px;
     padding: 5px;
@@ -313,6 +352,23 @@ a:visited {
   color: #000000 !important;
 }
 
+@media screen and (min-width: 460px){
+
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em
+  }
+}
+
+@media screen and (min-width: 520px){
+  .center-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color: var(--section-color);
+  }
+}
 /* 
 
 
