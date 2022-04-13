@@ -40,6 +40,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="unauthorized" element={<Unauthorized />} />
+        <Route path="confirmPwd/:id" element={<ConfirmPwd />} />  
 
         <Route path="linkpage" element={<LinkPage />} />  {/* ???? */}
        

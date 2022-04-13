@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import axios from '../../api/axios';
+import { useNavigate } from "react-router-dom"
+
 
 const EMAIL_REGEX = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
@@ -93,7 +95,8 @@ const Register = () => {
             errRef.current.focus();
         }
     }
-
+    const navigate = useNavigate();
+    const goBack = () => navigate(-1);
     return (
         <div className="center-container">
         <div className="center">
@@ -199,7 +202,7 @@ const Register = () => {
                             Must match the first password input field.
                         </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        <button onClick={goBack} disabled={!validName || !validPwd || !validMatch ? true : false }>Sign Up</button>
                     </form>
                     <p>
                         Already registered?<br />

@@ -11,3 +11,6 @@
 20220318	17:46:42	146ad9dc-b52c-432f-8d13-b27de5897bb6	Error: Not allowed by CORS
 20220411	02:10:17	ba7de413-0474-46a0-abea-47f86a867229	SyntaxError: Unexpected token p in JSON at position 44
 20220411	13:18:30	fccf4880-91f4-4354-b17b-3e268743b177	Error: ENOENT: no such file or directory, stat 'D:\Lamsh\Documents\GitHub\avalanche\code\wordle_war\server\views\index.html'
+20220413	11:31:54	1dd1b69f-d5ed-461e-a26b-873ac999a080	PayloadTooLargeError: request entity too large
+20220413	11:33:50	0f534a5f-9846-4b11-afcd-8693102e1b6a	PayloadTooLargeError: request entity too large
+20220413	13:14:37	94c7cc39-d7cb-40b1-bd60-75fd677a68ab	PayloadTooLargeError: request entity too large
