@@ -105,7 +105,7 @@ class Server {
 
             console.log('user in',socket.id)
             socket.on('waitRoom', data => {
-                console.log('(waitRoom): '+socket.id+"(keyword: "+data.keyword?.words+")");
+                console.log('(waitRoom): '+socket.id);
                 if(!this.onlineplayers.filter(p => p.socketid == socket.id).length > 0){
                     if(this.onlineplayers.length > 0){
                         var opponent = this.onlineplayers.pop();

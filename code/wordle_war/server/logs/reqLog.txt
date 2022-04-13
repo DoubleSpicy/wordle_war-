@@ -2311,3 +2311,5 @@
 20220413	09:24:33	3cb5e73b-ede8-46c8-af97-fd2df4595ac7	POST	http://localhost:3000	/Auth
 20220413	09:24:37	b2ed254a-3f62-4700-99c5-ef5d5d1cca8d	GET	http://localhost:3000	/game/_hkllyb59n
 20220413	09:24:49	4d79ceb1-e735-4ba1-aa69-0cb42cd90799	GET	http://localhost:3000	/game/_c0xq3y5dn
+20220413	12:22:13	43d7ded0-b417-40f2-92ba-a3c39a6e5349	OPTIONS	http://localhost:3000	/Auth
+20220413	12:22:13	8b340cac-2f49-47e7-9448-d65bc9f68bf9	POST	http://localhost:3000	/Auth
