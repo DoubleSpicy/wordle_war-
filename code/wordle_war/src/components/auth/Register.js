@@ -95,18 +95,21 @@ const Register = () => {
     }
 
     return (
+        <div className="center-container">
         <div class="center">
             {success ? (
                 <section>
                     <h1>Success register please check your Email!</h1>
                     <p>
-                        <Link to="/">Go to Home</Link>
+                        <Link to="/">
+                        <button class="ui inverted black basic button">Back to homepage</button>
+                        </Link>
                     </p>
                 </section>
             ) : (
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Register</h1>
+                    <div className="title-container">Register</div>
                     <form onSubmit={handleSubmit}>
 
                         <label htmlFor="userEmail">
@@ -196,19 +199,22 @@ const Register = () => {
                         <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             Must match the first password input field.
-                        </p>
+                        </p><br />
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        <button class="ui inverted black basic button" disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
                     <p>
                         Already registered?<br />
                         <span className="line">
                             {/*put router link here*/}
-                            <Link to="/login">login in</Link>
+                            <Link to="/login">
+                            <button class="ui inverted black basic button">←Login in</button>
+                            </Link>
                         </span>
                     </p>
                 </section>
             )}
+        </div>
         </div>
     )
 }

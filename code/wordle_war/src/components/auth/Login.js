@@ -58,7 +58,8 @@ const Login = () => {
             const rating = response?.data?.rating;
             const wincount = response?.data?.wincount;
             const losecount = response?.data?.losecount;
-            setAuth({ user, pwd, roles, accessToken, userid, username,rating,wincount,losecount });
+            const photo = response?.data?.photo;
+            setAuth({ user, pwd, roles, accessToken, userid, username,rating,wincount,losecount,photo });
             setUser('');
             setPwd('');
             // setSuccess(true);
@@ -78,11 +79,12 @@ const Login = () => {
     }
 
     return (
-        <div class="center">
+        <div className="center-container">
+        <div className="center">
             
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Sign In</h1>
+                    <div className="title-container">Sign In</div>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">Username:</label>
                         <input
@@ -103,16 +105,19 @@ const Login = () => {
                             value={pwd}
                             required
                         />
-                        <button>Login In</button>
+                        <button class="ui inverted black basic button">Login In</button>
                     </form>
                     <p>
                         Need an Account?<br />
                         <span className="line">
-                            <Link to="/register">Sign Up</Link>
+                            <Link to="/register">
+                                <button class="ui inverted black basic button"> Sign Up </button>
+                                </Link>
                         </span>
                     </p>
                 </section>
             {/* )} */}
+        </div>
         </div>
     )
 }
@@ -189,7 +194,7 @@ export default Login
 //                 value={pwd}
 //                 required
 //             />
-//             <button type="button" class="btn btn-primary btn-lg" >Sign In</button>
+//             <button type="button" className="btn btn-primary btn-lg" >Sign In</button>
 //         </form>
 //         <p>
 //             Need an Account?<br />

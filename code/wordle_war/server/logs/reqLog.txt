@@ -2191,3 +2191,13 @@
 20220411	21:28:04	6b7ca2d8-4d3c-4bf4-9048-a017ddd7cfa0	GET	undefined	/favicon.ico
 20220411	21:28:09	e3695244-5b35-4722-9c0f-3056a12c1b42	GET	undefined	/activate/user/_45agg0ydp
 20220411	21:28:09	53364292-2fdd-471a-a686-266fdf6907dd	GET	undefined	/favicon.ico
+20220413	06:48:24	9028626b-741d-4083-893a-780a0d524bca	OPTIONS	http://localhost:3000	/Auth
+20220413	06:48:24	b7389049-3d75-489e-9d2e-2e36b282af06	POST	http://localhost:3000	/Auth
+20220413	06:48:36	0af63d8a-241f-4a54-82f4-bcff38806844	GET	undefined	/admin
+20220413	06:48:36	32cad3a1-6567-457e-a0a8-8d7f7bdad2e4	GET	undefined	/admin/login
+20220413	06:48:36	04261d05-0d39-4dc1-a829-c4474074ea4a	GET	undefined	/admin/frontend/assets/global.bundle.js
+20220413	06:48:36	7f55dfcb-4927-4f00-aaa4-4c779a5eaf09	GET	undefined	/admin/frontend/assets/design-system.bundle.js
+20220413	06:48:36	fc4afc86-ac2e-4f5c-b7bf-565328a19c0b	GET	undefined	/admin/frontend/assets/logo.svg
+20220413	06:48:37	bd2206f5-4b92-419d-83bd-9d689b9acf73	GET	undefined	/favicon.ico
+20220413	06:48:54	22c73d14-81cc-45e2-985d-405f31a28acb	OPTIONS	http://localhost:3000	/Auth
+20220413	06:48:54	e8c74c89-645e-4249-ab33-7843574ef2ab	POST	http://localhost:3000	/Auth
