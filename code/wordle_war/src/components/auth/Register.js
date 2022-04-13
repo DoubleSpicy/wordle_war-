@@ -96,7 +96,7 @@ const Register = () => {
 
     return (
         <div className="center-container">
-        <div class="center">
+        <div className="center">
             {success ? (
                 <section>
                     <h1>Success register please check your Email!</h1>
