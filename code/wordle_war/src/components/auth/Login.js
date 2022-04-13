@@ -58,7 +58,8 @@ const Login = () => {
             const rating = response?.data?.rating;
             const wincount = response?.data?.wincount;
             const losecount = response?.data?.losecount;
-            setAuth({ user, pwd, roles, accessToken, userid, username,rating,wincount,losecount });
+            const photo = response?.data?.photo;
+            setAuth({ user, pwd, roles, accessToken, userid, username,rating,wincount,losecount,photo });
             setUser('');
             setPwd('');
             // setSuccess(true);
@@ -78,11 +79,12 @@ const Login = () => {
     }
 
     return (
+        <div className="center-container">
         <div className="center">
             
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Sign In</h1>
+                    <div className="title-container">Sign In</div>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">Username:</label>
                         <input
@@ -113,6 +115,7 @@ const Login = () => {
                     </p>
                 </section>
             {/* )} */}
+        </div>
         </div>
     )
 }

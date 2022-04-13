@@ -15,6 +15,7 @@ const Home = () => {
 
     return (
 
+        <div className="center-container">
         <div className="center">
             <section>
                 <h1>Home</h1>
@@ -43,6 +44,7 @@ const Home = () => {
                     <button onClick={logout}>Sign Out</button>
                 </div> */}
             </section>
+        </div>
         </div>
 
     )
