@@ -22,9 +22,9 @@ To contribute in this project, please take a look at the following pages:
 | ⬜ |Total |	100%|	15 weeks	
 
 ## Final Report Requirements
-no more than 30 pages
-font Times New Roman and size 11
-should include five sections (introduction, system architectural design, detailed description of components, user interface design, and test plans/cases)
+- no more than 30 pages
+- font Times New Roman and size 11
+- should include five sections (introduction, system architectural design, detailed description of components, user interface design, and test plans/cases)
 
 ## Meeting detail
 - Weeking meeting  
