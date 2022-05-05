@@ -250,7 +250,7 @@ export default Setting
 //     }
 
 //     return (
-//         <div class="center">
+//         <div className="center">
 //             <h1>setting</h1>
 //             <section>
 //                 <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>

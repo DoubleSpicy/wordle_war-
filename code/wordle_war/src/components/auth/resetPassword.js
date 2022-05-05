@@ -45,7 +45,8 @@ const ResetPassword = () => {
 
 
     return (
-        <div class="center">
+        <div className="center-container">
+        <div className="center">
 
             {success ? (
                 <section>
@@ -58,7 +59,7 @@ const ResetPassword = () => {
             ) : (
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>reset password</h1>
+                    <div className="title-container">ResetPassword</div>
                     <form onSubmit={handleSubmit}>
                         <p style={{ display: success ? "block" : "none" }}>{userEmail}</p>
                         <label htmlFor="userEmail">
@@ -77,6 +78,7 @@ const ResetPassword = () => {
                     </form>
                 </section>
             )}
+        </div>
         </div>
 
 

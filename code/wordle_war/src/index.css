@@ -24,6 +24,9 @@
   --section-color: rgba(255, 255, 255, 0.4);
 }
 
+input[type=text],input[type=password]{
+  color: black;
+}
 
 html {
   font-family: "Neue Helvetica", sans-serif;
@@ -44,6 +47,12 @@ header {
   width: 100%;
   height: var(--height);
   position: relative;
+  box-shadow: 0px 0px 6px 2px #7c7c7c85;
+}
+
+.header_right{
+  display: flex;
+  flex-direction: row;
 }
 
 body {
@@ -51,6 +60,10 @@ body {
   color: var(--color);
   transition: background-color 0.3s ease;
   text-align: center
+}
+
+.center-container{
+
 }
 
 
@@ -61,6 +74,11 @@ body {
   background-color: var(--background-color);
 }
 
+.PopUp Button{
+  position: absolute;
+    right: 0;
+}
+
 section {
   width: 100%;
   max-width: 420px;
@@ -69,8 +87,16 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
-  background-color: var(--section-color);
+  background-color: #5FC18B;
+  position: relative;
+  border: none;
+}
 
+.sectionTitle{
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 form {
@@ -81,10 +107,16 @@ form {
   padding-bottom: 1rem;
 }
 
-.center {
-  margin-left: auto;
-  margin-right: auto;
-  width: 20em
+.errmsg{
+  background: var(--color);
+  color: var(--background-color);
+  box-shadow: 0px 0px 10px 0px var(--color);
+}
+
+.errmsg{
+  background: var(--color);
+  color: var(--background-color);
+  box-shadow: 0px 0px 10px 0px var(--color);
 }
 
 form {
@@ -93,6 +125,24 @@ form {
   justify-content: space-evenly;
   flex-grow: 1;
   padding-bottom: 1rem;
+}
+
+.header_logo a,
+.header_logo a:visited {
+  color: var(--color);
+}
+
+#navList a, #navList a:visited, #navList button{
+  border: 3px solid var(--background-color);
+  border-radius: 5px;
+  width: 100%;
+  display: block;
+  color: var(--background-color);
+}
+
+.title-container{
+  font-size: larger;
+  border-bottom: 2px solid var(--color);
 }
 
 a,
@@ -162,23 +212,208 @@ a:visited {
 
 .profile{
   background-color: var(--background-color);
-    color: var(--color);
-    text-align: left;
-    font-size: initial;
+  color: var(--color);
+  text-align: left;
+  font-size: initial;
+  border-radius: 5px;
+  padding: 5px;
 }
 
+.profile img{
+  width: 40%;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.profilePhoto-container{
+  border: 2px solid var(--color);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.uploadPhoto-container{
+  background: antiquewhite;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 520px){
+
+  .header_logo a, .header_logo a:visited {
+    font-size: x-small;
+  }
+
+  .header_logo button {
+    padding: 0;
+  }
+
+  .expand{
+    display: none;
+  }
+
+  .keyboard-row span{
+    font-size: initial;
+    border-radius: 5px;
+    padding: 5px;
+}
+}
+
+.profile img{
+  width: 40%;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.profilePhoto-container{
+  border: 2px solid var(--color);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.uploadPhoto-container{
+  background: antiquewhite;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 520px){
+
+  .header_logo a, .header_logo a:visited {
+    font-size: x-small;
+  }
+
+  .header_logo button {
+    padding: 0;
+  }
+
+  .expand{
+    display: none;
+  }
+
+  .keyboard-row span{
+    font-size: initial;
+  }
+
+  
+
+}
+
+@media screen and (min-width: 460px){
+
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em
+  }
+}
+
+@media screen and (min-width: 520px){
+  .center-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color: var(--section-color);
+  }
+}
+
+.ui.inverted.black.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.ui.inverted.black.basic.buttons .button:hover,
+.ui.inverted.black.buttons .basic.button:hover,
+.ui.inverted.black.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #000000 !important;
+}
+.ui.inverted.black.basic.buttons .button:focus,
+.ui.inverted.black.basic.buttons .button:focus,
+.ui.inverted.black.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #000000 !important;
+}
+.ui.inverted.black.basic.buttons .active.button,
+.ui.inverted.black.buttons .basic.active.button,
+.ui.inverted.black.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #000000 !important;
+}
+.ui.inverted.black.basic.buttons .button:active,
+.ui.inverted.black.buttons .basic.button:active,
+.ui.inverted.black.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #000000 !important;
+}
+
+@media screen and (min-width: 460px){
+
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em
+  }
+}
+
+@media screen and (min-width: 520px){
+  .center-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color: var(--section-color);
+  }
+}
+
+.ui.inverted.black.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.ui.inverted.black.basic.buttons .button:hover,
+.ui.inverted.black.buttons .basic.button:hover,
+.ui.inverted.black.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #000000 !important;
+}
+.ui.inverted.black.basic.buttons .button:focus,
+.ui.inverted.black.basic.buttons .button:focus,
+.ui.inverted.black.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #000000 !important;
+}
+.ui.inverted.black.basic.buttons .active.button,
+.ui.inverted.black.buttons .basic.active.button,
+.ui.inverted.black.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #000000 !important;
+}
+.ui.inverted.black.basic.buttons .button:active,
+.ui.inverted.black.buttons .basic.button:active,
+.ui.inverted.black.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #000000 !important;
+
+
+}
 /* 
-
-
 body {
   background-color: var(--background-color);
   color: var(--color);
   transition: background-color 0.3s ease;
   text-align: center 
 }
-
-
-
 .App {
   display: flex;
   flex-direction: column;
@@ -188,7 +423,6 @@ body {
   padding: 1rem 0.5rem;
   color: var(--color);
 }
-
 section {
   width: 100%;
   max-width: 420px;
@@ -199,7 +433,6 @@ section {
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.4);
 }
-
 form {
   display: flex;
   flex-direction: column;
@@ -207,12 +440,10 @@ form {
   flex-grow: 1;
   padding-bottom: 1rem;
 }
-
 a,
 a:visited {
   color: #fff;
 }
-
 input[type="text"],
 input[type="password"],
 button,
@@ -222,16 +453,13 @@ textarea {
   padding: 0.25rem;
   border-radius: 0.5rem;
 }
-
 label,
 button {
   margin-top: 1rem;
 }
-
 button {
   padding: 0.5rem;
 }
-
 .instructions {
   font-size: 0.75rem;
   border-radius: 0.5rem;
@@ -241,30 +469,24 @@ button {
   position: relative;
   bottom: -10px;
 }
-
 .instructions > svg {
   margin-right: 0.25rem;
 }
-
 .offscreen {
   position: absolute;
   left: -9999px;
 }
-
 .hide {
   display: none;
 }
-
 .valid {
   color: limegreen;
   margin-left: 0.25rem;
 }
-
 .invalid {
   color: red;
   margin-left: 0.25rem;
 }
-
 .errmsg {
   background-color: lightpink;
   color: firebrick;
@@ -272,7 +494,6 @@ button {
   padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
-
 .line {
   display: inline-block;
 } */

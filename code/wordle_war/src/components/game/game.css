@@ -12,6 +12,7 @@ html, body {
   }
   
   #board-container {
+    padding: 20px 0px;
 	  display: flex;
 	  width: 100%;
 	  max-width: 100vw;
@@ -29,18 +30,13 @@ html, body {
 	  
   }
 
-  #board{
-	height: var(--height);
-	  width: min(350px, calc(var(--height) / 6 * 5));
-  }
+
   
   #opponent{
 	  border: 5px solid;
 	  padding: 10px;
 	  
 	  border-radius: 20px;
-	  height: calc(var(--height)*0.75);
-      width: min(260px,calc(var(--height) / 6 * 5*0.75));
   }
 
   #opponent-border{
@@ -189,6 +185,11 @@ html, body {
     overflow: auto;
   }
 
+  .dark-mode .block {
+    color: #FFFFFF;
+  }
+  
+
   .dialog a, .dialog a:visited {
     color: var(--color);
   }
@@ -208,14 +209,14 @@ html, body {
 	  backface-visibility: hidden;
 	  -webkit-backface-visibility: hidden;
   }
-  .dark .block {
+  .dark-mode .block {
 	  color: #fff;
   }
   .block .front {
 	  border-radius: 3px;
 	  border: 2px solid #d3d6da;
   }
-  .dark .block .front {
+  .dark-mode .block .front {
 	  border-radius: 3px;
 	  border-color: #3F3F46;
   }
@@ -223,7 +224,7 @@ html, body {
 	  border-radius: 3px;
 	  border-color: #999;
   }
-  .dark .block.filled .front {
+  .dark-mode .block.filled .front {
 	  border-radius: 3px;
 	  border-color: #52525B;
   }
@@ -270,8 +271,30 @@ html, body {
 	  background-color: #82918b !important;
   }
 
+  @media screen and (max-width: 420px){
+    #opponent {
+      height: calc(var(--height)*0.5);
+      width: min(260px,calc(var(--height) / 6 * 5*0.5));
+    }
+
+    #board {
+      height: calc((var(--height)/6*6)*0.75);
+      width: calc((var(--height)/6*5)*0.75);
+    }
+
+    .block{
+      font-size: larger;
+    }
+  }
   
-  
-  @media screen and (min-width: 768px){
-    
+  @media screen and (min-width: 420px){
+    #opponent {
+      height: calc(var(--height)*0.75);
+      width: min(260px,calc(var(--height) / 6 * 5*0.75));
+    }
+
+    #board{
+      height: var(--height);
+      width: min(350px, calc(var(--height) / 6 * 5));
+    }
   }
