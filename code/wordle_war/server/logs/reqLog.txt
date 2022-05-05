@@ -2191,3 +2191,7 @@
 20220411	21:28:04	6b7ca2d8-4d3c-4bf4-9048-a017ddd7cfa0	GET	undefined	/favicon.ico
 20220411	21:28:09	e3695244-5b35-4722-9c0f-3056a12c1b42	GET	undefined	/activate/user/_45agg0ydp
 20220411	21:28:09	53364292-2fdd-471a-a686-266fdf6907dd	GET	undefined	/favicon.ico
+20220413	11:08:37	ccc975f7-7cf2-4266-880d-de787dccdd01	OPTIONS	http://localhost:3000	/Auth
+20220413	11:08:37	7cc14eb1-fcd6-4b14-be90-69c38dcec2b1	POST	http://localhost:3000	/Auth
+20220413	13:30:05	d5bbff88-8226-48de-a2fc-092758f5f0df	GET	undefined	/
+20220413	13:30:06	8d36c36b-3dba-49a9-9b65-d8946eae1263	GET	undefined	/favicon.ico
