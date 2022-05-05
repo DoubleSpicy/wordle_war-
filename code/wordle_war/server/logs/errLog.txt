@@ -11,3 +11,4 @@
 20220318	17:46:42	146ad9dc-b52c-432f-8d13-b27de5897bb6	Error: Not allowed by CORS
 20220411	02:10:17	ba7de413-0474-46a0-abea-47f86a867229	SyntaxError: Unexpected token p in JSON at position 44
 20220411	13:18:30	fccf4880-91f4-4354-b17b-3e268743b177	Error: ENOENT: no such file or directory, stat 'D:\Lamsh\Documents\GitHub\avalanche\code\wordle_war\server\views\index.html'
+20220413	13:30:05	0c26585a-fd9e-482f-91e6-10ed1fc2d3d8	Error: ENOENT: no such file or directory, stat 'E:\csci3100\avalanche\avalanche\code\wordle_war\server\views\index.html'

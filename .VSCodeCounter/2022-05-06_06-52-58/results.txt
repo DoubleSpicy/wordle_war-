@@ -1,0 +1,199 @@
+Date : 2022-05-06 06:52:58
+Directory : e:\csci3100\avalanche\avalanche
+Total : 137 files,  38695 codes, 1211 comments, 1075 blanks, all 40981 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |         12 |     18,666 |          0 |          8 |     18,674 |
+| JavaScript         |         92 |     18,508 |        941 |        726 |     20,175 |
+| CSS                |          7 |        692 |        123 |        127 |        942 |
+| HTML               |          5 |        352 |         25 |         64 |        441 |
+| TypeScript React   |          4 |        159 |         94 |         56 |        309 |
+| Markdown           |          7 |        149 |         10 |         46 |        205 |
+| Python             |          7 |         98 |         18 |         37 |        153 |
+| JSON with Comments |          2 |         37 |          0 |          1 |         38 |
+| LaTeX              |          1 |         34 |          0 |         10 |         44 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                      | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                         |        137 |     38,695 |      1,211 |      1,075 |     40,981 |
+| code                                                                                                      |        131 |     38,579 |      1,211 |      1,043 |     40,833 |
+| code\dataset                                                                                              |          3 |         41 |         15 |         18 |         74 |
+| code\login-page                                                                                           |         16 |        703 |         54 |        133 |        890 |
+| code\login-page\assets                                                                                    |         11 |        365 |         52 |         70 |        487 |
+| code\login-page\assets\css                                                                                |          4 |        265 |         14 |         55 |        334 |
+| code\login-page\assets\js                                                                                 |          7 |        100 |         38 |         15 |        153 |
+| code\wordle_war                                                                                           |        106 |     37,773 |      1,139 |        872 |     39,784 |
+| code\wordle_war\public                                                                                    |          2 |         45 |         23 |          2 |         70 |
+| code\wordle_war\server                                                                                    |         59 |      9,512 |        434 |        327 |     10,273 |
+| code\wordle_war\server\.adminbro                                                                          |          1 |          1 |          0 |          1 |          2 |
+| code\wordle_war\server\config                                                                             |          4 |         38 |          0 |          6 |         44 |
+| code\wordle_war\server\controllers                                                                        |         19 |        597 |        389 |        204 |      1,190 |
+| code\wordle_war\server\controllers\db                                                                     |          1 |         19 |          0 |          3 |         22 |
+| code\wordle_war\server\middleware                                                                         |          5 |         66 |          0 |         14 |         80 |
+| code\wordle_war\server\model                                                                              |          9 |        208 |          0 |          9 |        217 |
+| code\wordle_war\server\routes                                                                             |         16 |        128 |          3 |         39 |        170 |
+| code\wordle_war\server\routes\api                                                                         |          3 |         32 |          1 |          9 |         42 |
+| code\wordle_war\src                                                                                       |         39 |     15,534 |        672 |        513 |     16,719 |
+| code\wordle_war\src\api                                                                                   |          1 |         10 |          0 |          2 |         12 |
+| code\wordle_war\src\components                                                                            |         35 |     15,310 |        409 |        438 |     16,157 |
+| code\wordle_war\src\components\auth                                                                       |          5 |        498 |         94 |         87 |        679 |
+| code\wordle_war\src\components\context                                                                    |          1 |         11 |          0 |          4 |         15 |
+| code\wordle_war\src\components\game                                                                       |          9 |     14,077 |        100 |        171 |     14,348 |
+| code\wordle_war\src\components\game\multi                                                                 |          2 |        514 |         83 |         75 |        672 |
+| code\wordle_war\src\components\header                                                                     |          2 |         81 |          1 |         23 |        105 |
+| code\wordle_war\src\components\home                                                                       |          2 |         88 |          7 |         13 |        108 |
+| code\wordle_war\src\components\hooks                                                                      |          3 |         63 |          3 |         12 |         78 |
+| code\wordle_war\src\components\layout                                                                     |         12 |        426 |        153 |         96 |        675 |
+| documentations                                                                                            |          4 |         88 |          0 |         21 |        109 |
+| documentations\rating                                                                                     |          1 |         34 |          0 |         10 |         44 |
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                                  | language           | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| e:\csci3100\avalanche\avalanche\README.md                                                                 | Markdown           |         25 |          0 |         10 |         35 |
+| e:\csci3100\avalanche\avalanche\code\dataset\binary_search_nearest_rating.py                              | Python             |         16 |          7 |          7 |         30 |
+| e:\csci3100\avalanche\avalanche\code\dataset\difficulty_estimator.py                                      | Python             |         18 |          8 |          5 |         31 |
+| e:\csci3100\avalanche\avalanche\code\dataset\random_selector.py                                           | Python             |          7 |          0 |          6 |         13 |
+| e:\csci3100\avalanche\avalanche\code\login-page\README.md                                                 | Markdown           |          6 |          0 |          0 |          6 |
+| e:\csci3100\avalanche\avalanche\code\login-page\assets\css\animate.min.css                                | CSS                |          2 |          0 |          0 |          2 |
+| e:\csci3100\avalanche\avalanche\code\login-page\assets\css\bootstrap.min.css                              | CSS                |          1 |          6 |          0 |          7 |
+| e:\csci3100\avalanche\avalanche\code\login-page\assets\css\my-login.css                                   | CSS                |        214 |          8 |         44 |        266 |
+| e:\csci3100\avalanche\avalanche\code\login-page\assets\css\second.css                                     | CSS                |         48 |          0 |         11 |         59 |
+| e:\csci3100\avalanche\avalanche\code\login-page\assets\js\bootstrap.min.js                                | JavaScript         |          1 |          5 |          0 |          6 |
+| e:\csci3100\avalanche\avalanche\code\login-page\assets\js\dark-mode-switch.js                             | JavaScript         |         27 |         22 |          4 |         53 |
+| e:\csci3100\avalanche\avalanche\code\login-page\assets\js\dark-mode-switch.min.js                         | JavaScript         |          1 |          5 |          0 |          6 |
+| e:\csci3100\avalanche\avalanche\code\login-page\assets\js\jquery.min.js                                   | JavaScript         |          4 |          1 |          0 |          5 |
+| e:\csci3100\avalanche\avalanche\code\login-page\assets\js\my-login.js                                     | JavaScript         |         55 |          1 |         11 |         67 |
+| e:\csci3100\avalanche\avalanche\code\login-page\assets\js\pooper.min.js                                   | JavaScript         |          1 |          4 |          0 |          5 |
+| e:\csci3100\avalanche\avalanche\code\login-page\assets\js\workspace.code-workspace                        | JSON with Comments |         11 |          0 |          0 |         11 |
+| e:\csci3100\avalanche\avalanche\code\login-page\forgot.html                                               | HTML               |         57 |          0 |          7 |         64 |
+| e:\csci3100\avalanche\avalanche\code\login-page\index.html                                                | HTML               |         83 |          0 |         22 |        105 |
+| e:\csci3100\avalanche\avalanche\code\login-page\register.html                                             | HTML               |         71 |          1 |         15 |         87 |
+| e:\csci3100\avalanche\avalanche\code\login-page\reset.html                                                | HTML               |        121 |          1 |         19 |        141 |
+| e:\csci3100\avalanche\avalanche\code\match.py                                                             | Python             |         29 |          2 |         11 |         42 |
+| e:\csci3100\avalanche\avalanche\code\match_maker.py                                                       | Python             |         12 |          0 |          5 |         17 |
+| e:\csci3100\avalanche\avalanche\code\package-lock.json                                                    | JSON               |          3 |          0 |          1 |          4 |
+| e:\csci3100\avalanche\avalanche\code\player.py                                                            | Python             |         12 |          0 |          3 |         15 |
+| e:\csci3100\avalanche\avalanche\code\rating.py                                                            | Python             |          4 |          1 |          0 |          5 |
+| e:\csci3100\avalanche\avalanche\code\readme.md                                                            | Markdown           |          2 |          0 |          0 |          2 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\README.md                                                 | Markdown           |         62 |         10 |         25 |         97 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\package-lock.json                                         | JSON               |     12,511 |          0 |          1 |     12,512 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\package.json                                              | JSON               |         68 |          0 |          1 |         69 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\postcss.config.js                                         | JavaScript         |          6 |          0 |          1 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\public\index.html                                         | HTML               |         20 |         23 |          1 |         44 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\public\manifest.json                                      | JSON               |         25 |          0 |          1 |         26 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\.adminbro\.entry.js                                | JavaScript         |          1 |          0 |          1 |          2 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\config\allowedOrigins.js                           | JavaScript         |          8 |          0 |          1 |          9 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\config\corsOptions.js                              | JavaScript         |         12 |          0 |          2 |         14 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\config\dbConn.js                                   | JavaScript         |         12 |          0 |          2 |         14 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\config\roles_list.js                               | JavaScript         |          6 |          0 |          1 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\activateController.js                  | JavaScript         |         25 |         54 |         25 |        104 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\activateEmail.js                       | JavaScript         |         32 |          0 |          6 |         38 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\adminChangePasswordController.js       | JavaScript         |         20 |          5 |          8 |         33 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\adminResetPasswordEmail.js             | JavaScript         |         33 |          0 |          7 |         40 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\authController.js                      | JavaScript         |         41 |          6 |          5 |         52 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\db\pending-user.js                     | JavaScript         |         19 |          0 |          3 |         22 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\elo.js                                 | JavaScript         |         20 |          0 |          2 |         22 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\employeesController.js                 | JavaScript         |         57 |          0 |         11 |         68 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\gameController.js                      | JavaScript         |         90 |         20 |         16 |        126 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\loginController.js                     | JavaScript         |         18 |          2 |          5 |         25 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\logoutController.js                    | JavaScript         |         17 |          3 |          6 |         26 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\refreshTokenController.js              | JavaScript         |         32 |          1 |          3 |         36 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\registerController.js                  | JavaScript         |         33 |         49 |         23 |        105 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\resetAccountEmail.js                   | JavaScript         |         33 |          0 |          7 |         40 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\resetPasswordConfirmationController.js | JavaScript         |         20 |         54 |         16 |         90 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\resetPasswordController.js             | JavaScript         |         27 |         41 |         14 |         82 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\sendEmail.js                           | JavaScript         |         32 |        148 |         31 |        211 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\userChangePasswordController.js        | JavaScript         |         19 |          5 |         12 |         36 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\controllers\usersController.js                     | JavaScript         |         29 |          1 |          4 |         34 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\email.js                                           | JavaScript         |          9 |         18 |          1 |         28 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\middleware\credentials.js                          | JavaScript         |          9 |          0 |          2 |         11 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\middleware\errorHandler.js                         | JavaScript         |          7 |          0 |          2 |          9 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\middleware\logEvents.js                            | JavaScript         |         23 |          0 |          7 |         30 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\middleware\verifyJWT.js                            | JavaScript         |         17 |          0 |          2 |         19 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\middleware\verifyRoles.js                          | JavaScript         |         10 |          0 |          1 |         11 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\model\Employee.js                                  | JavaScript         |         13 |          0 |          2 |         15 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\model\User.js                                      | JavaScript         |         45 |          0 |          2 |         47 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\model\employees.json                               | JSON               |         12 |          0 |          0 |         12 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\model\pending-users.js                             | JavaScript         |         45 |          0 |          2 |         47 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\model\pending-users.json                           | JSON               |          8 |          0 |          0 |          8 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\model\resetAccount.js                              | JavaScript         |         45 |          0 |          2 |         47 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\model\resetPassword.json                           | JSON               |          2 |          0 |          1 |          3 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\model\users.json                                   | JSON               |         18 |          0 |          0 |         18 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\model\usersDB.json                                 | JSON               |         20 |          0 |          0 |         20 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\package-lock.json                                  | JSON               |      5,956 |          0 |          1 |      5,957 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\package.json                                       | JSON               |         40 |          0 |          1 |         41 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\activate.js                                 | JavaScript         |          5 |          0 |          2 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\admin.js                                    | JavaScript         |         34 |          2 |          5 |         41 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\adminChangePassword.js                      | JavaScript         |          5 |          0 |          2 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\api\employees.js                            | JavaScript         |         13 |          0 |          3 |         16 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\api\game.js                                 | JavaScript         |          8 |          1 |          3 |         12 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\api\users.js                                | JavaScript         |         11 |          0 |          3 |         14 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\auth.js                                     | JavaScript         |          5 |          0 |          2 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\login.js                                    | JavaScript         |          5 |          0 |          2 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\logout.js                                   | JavaScript         |          5 |          0 |          2 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\refresh.js                                  | JavaScript         |          5 |          0 |          2 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\register.js                                 | JavaScript         |          5 |          0 |          2 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\reset-password.js                           | JavaScript         |          5 |          0 |          2 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\resetPasswordConfirmation.js                | JavaScript         |          5 |          0 |          2 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\root.js                                     | JavaScript         |          7 |          0 |          2 |          9 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\testEmail.js                                | JavaScript         |          5 |          0 |          3 |          8 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\routes\userChangePassword.js                       | JavaScript         |          5 |          0 |          2 |          7 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\server.js                                          | JavaScript         |        151 |         24 |         49 |        224 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\server\word.js                                            | JavaScript         |      2,318 |          0 |          2 |      2,320 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\App.js                                                | JavaScript         |         60 |        112 |         45 |        217 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\api\axios.js                                          | JavaScript         |         10 |          0 |          2 |         12 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\Header.tsx                                 | TypeScript React   |         66 |         51 |         32 |        149 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\auth\Login.js                              | JavaScript         |         98 |         85 |         22 |        205 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\auth\Register.js                           | JavaScript         |        188 |          3 |         25 |        216 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\auth\RequireAuth.js                        | JavaScript         |         14 |          0 |          4 |         18 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\auth\confirmPwd.js                         | JavaScript         |        126 |          4 |         23 |        153 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\auth\resetPassword.js                      | JavaScript         |         72 |          2 |         13 |         87 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\context\AuthProvider.js                    | JavaScript         |         11 |          0 |          4 |         15 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\game\Tile.js                               | JavaScript         |         10 |          0 |          6 |         16 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\game\eventbus.js                           | JavaScript         |         12 |          0 |          1 |         13 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\game\game.css                              | CSS                |        239 |          0 |         38 |        277 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\game\game.js                               | JavaScript         |        204 |         12 |         23 |        239 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\game\keyboard.css                          | CSS                |         46 |          0 |          7 |         53 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\game\keyboard.js                           | JavaScript         |         74 |          3 |         17 |         94 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\game\multi\mserver.js                      | JavaScript         |         88 |         29 |         16 |        133 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\game\multi\multiGame.js                    | JavaScript         |        426 |         54 |         59 |        539 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\game\word.js                               | JavaScript         |     12,978 |          2 |          4 |     12,984 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\header\Setting.tsx                         | TypeScript React   |          8 |          0 |          9 |         17 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\header\Tutorial.tsx                        | TypeScript React   |         73 |          1 |         14 |         88 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\home\Home.js                               | JavaScript         |         53 |          1 |          6 |         60 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\home\HomePageNoLogin.js                    | JavaScript         |         35 |          6 |          7 |         48 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\hooks\useAuth.js                           | JavaScript         |          6 |          0 |          2 |          8 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\hooks\useAxiosPrivate.js                   | JavaScript         |         37 |          2 |          6 |         45 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\hooks\useRefreshToken.js                   | JavaScript         |         20 |          1 |          4 |         25 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\Layout.js                           | JavaScript         |         14 |          0 |          2 |         16 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\LinkPage.js                         | JavaScript         |         18 |          0 |          2 |         20 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\Lounge.js                           | JavaScript         |         14 |          0 |          2 |         16 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\RequireAuth.js                      | JavaScript         |         14 |          0 |          3 |         17 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\Unauthorized.js                     | JavaScript         |         16 |          0 |          4 |         20 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\admin.js                            | JavaScript         |         21 |          1 |          2 |         24 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\adminChangePw.js                    | JavaScript         |         86 |          2 |         15 |        103 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\editor.js                           | JavaScript         |         14 |          0 |          2 |         16 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\missing.js                          | JavaScript         |          9 |          0 |          3 |         12 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\refresh.js                          | JavaScript         |          0 |         35 |         12 |         47 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\setting.js                          | JavaScript         |        160 |        113 |         41 |        314 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\components\layout\userList.js                         | JavaScript         |         60 |          2 |          8 |         70 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\index.css                                             | CSS                |        142 |        109 |         27 |        278 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\src\index.tsx                                             | TypeScript React   |         12 |         42 |          1 |         55 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\tailwind.config.js                                        | JavaScript         |          9 |          0 |          1 |         10 |
+| e:\csci3100\avalanche\avalanche\code\wordle_war\tsconfig.json                                             | JSON with Comments |         26 |          0 |          1 |         27 |
+| e:\csci3100\avalanche\avalanche\documentations\Development Guidelines.md                                  | Markdown           |         50 |          0 |         11 |         61 |
+| e:\csci3100\avalanche\avalanche\documentations\Functionalities.md                                         | Markdown           |          2 |          0 |          0 |          2 |
+| e:\csci3100\avalanche\avalanche\documentations\Roadmap.md                                                 | Markdown           |          2 |          0 |          0 |          2 |
+| e:\csci3100\avalanche\avalanche\documentations\rating\spec.tex                                            | LaTeX              |         34 |          0 |         10 |         44 |
+| e:\csci3100\avalanche\avalanche\package-lock.json                                                         | JSON               |          3 |          0 |          1 |          4 |
+| Total                                                                                                     |                    |     38,695 |      1,211 |      1,075 |     40,981 |
++-----------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
