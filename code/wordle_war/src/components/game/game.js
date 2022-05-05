@@ -6,6 +6,8 @@ import EventBus from './eventbus';
 import AllWords from './word';
 import { Button } from '@mui/material';
 import { answers } from './word';
+import { Link } from "react-router-dom";
+import { useNavigate, useLocation  } from "react-router-dom";
 
 //call it using <Game />
 
@@ -28,7 +30,7 @@ class Block extends React.Component {
 }
 
 //Whole game
-export default class Game extends React.Component {
+class SingleGame extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -55,45 +57,46 @@ export default class Game extends React.Component {
 				state: ''
 			});
 		}
-		
-		//recevice the keyboard keydown to play game
-		EventBus.on("CustomKeyDown", (data) =>{
-			//console.log("CustomKeyDown",data);
-			if(data){
-				if(data.key == 'Backspace'){
-					if(this.state.current_index > 0){
-						this.state.current_index--;
-						this.updateBlock(this.state.current_row,this.state.current_index,undefined,'');
-					}
-					
-				}else if(data.key == 'Enter'){
-					if(this.state.current_index >= this.state.letter_count){
-						
-						if(AllWords.includes(this.getFullWordOfRow(this.state.current_row))){
-							this.checkMatchKeyword();
-						}else{
-							this.showPopup("The word is not in word list");
-                            console.log("The word is not in word list");
-						}
-						
-					}else{
-						this.showPopup("The block is not full-filled");
-                        console.log("The block is not full-filled");
-					}
-				}else{
-					if(this.state.current_index <= this.state.letter_count - 1){
-						this.updateBlock(this.state.current_row,this.state.current_index,data.key,'');
-						this.state.current_index++;
-					}
-					//console.log("current index: "+this.state.current_index+", row: "+ this.state.current_row);
-				}
-			}else{
-				console.log("data is undefined");
-			}
-			
-		});
+		this.keyboardInput = this.keyboardInput.bind(this);
 
 	}
+
+	//recevice the keyboard keydown to play game
+    keyboardInput(data){
+        //console.log("CustomKeyDown",data);
+        if (data) {
+            if (data.key == 'Backspace') {
+                if (this.state.current_index > 0) {
+                    this.state.current_index--;
+                    this.updateBlock(this.state.current_row, this.state.current_index, undefined, '');
+                }
+
+            } else if (data.key == 'Enter') {
+                if (this.state.current_index >= this.state.letter_count) {
+
+                    if (AllWords.includes(this.getFullWordOfRow(this.state.current_row))) {
+                        this.checkMatchKeyword();
+                    } else {
+                        this.showPopup("The word is not in word list");
+                        console.log("The word is not in word list");
+                    }
+
+                } else {
+                    this.showPopup("The block is not full-filled");
+                    console.log("The block is not full-filled");
+                }
+            } else {
+                if (this.state.current_index <= this.state.letter_count - 1) {
+                    this.updateBlock(this.state.current_row, this.state.current_index, data.key, '');
+                    this.state.current_index++;
+                }
+                //console.log("current index: "+this.state.current_index+", row: "+ this.state.current_row);
+            }
+        } else {
+            console.log("data is undefined");
+        }
+
+    }
 
 	//update one block letter and state using row and col
 	updateBlock(row,col,letter,state){
@@ -109,10 +112,10 @@ export default class Game extends React.Component {
 
 	//check one row is not match the answer
 	checkMatchKeyword(){
-		let row_index = this.state.current_row;
+		var row_index = this.state.current_row;
 		this.state.current_row++;
 		this.state.current_index = 0;
-		let target_row = this.state.userfill[row_index];
+		var target_row = this.state.userfill[row_index];
 		var correct = 0;
 		for(var i = 0;i < this.state.letter_count;i++){
 			console.log(target_row[i].letter+"|"+this.state.keyword.charAt(i));
@@ -216,7 +219,7 @@ export default class Game extends React.Component {
 					{blocks}
 				</div>
 			</div>
-			<Keyboard game={this}/>
+			<Keyboard keyref={this.keyboardInput} />
 			<div className='popup-msg'>
 				{this.state.popup}
 			</div>
@@ -229,10 +232,20 @@ export default class Game extends React.Component {
                         Answer: {this.state.keyword}<br/>
                         Result<br/>
                         {this.state.result.player}
-                        <Button href="/">exit</Button>
+                        <Link to={this.props.leaveref}>EXIT</Link>
                     </div>
                 </div>}
 		</div>
     );
   }
 }
+
+const Game = ()=>{
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    console.log('from:',from);
+    return <SingleGame leaveref={from}/>
+}
+
+export default Game;

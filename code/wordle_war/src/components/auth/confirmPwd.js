@@ -82,7 +82,7 @@ const ConfirmPwd = () => {
 
 
     return (
-        <div class="center">
+        <div className="center">
             {success ? (
                 <section>
                     <h1>"you reseted the password!"</h1>

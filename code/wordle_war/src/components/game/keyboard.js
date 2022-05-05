@@ -23,7 +23,8 @@ class KeyboardButton extends React.Component {
 
     //emit the event of Class Game "CustomKeyDown"
     clickBtn(key){
-        EventBus.dispatch("CustomKeyDown", { key: key });
+        this.props.keyref({ key: key });
+        //EventBus.dispatch("CustomKeyDown", { key: key });
     }
 
     render(){
@@ -59,7 +60,7 @@ export default class Keyboard extends React.Component {
             for(var j = 0;j < rows[i].length;j++){
                 //console.log("rows[i][j]",rows[i][j]);
                 keyboard_rows.push(
-                    <KeyboardButton key={i*5+j}  keyboard_key={rows[i][j]} />
+                    <KeyboardButton keyref={this.props.keyref} key={i*5+j}  keyboard_key={rows[i][j]} />
                 );
             }
             if(i == 1){

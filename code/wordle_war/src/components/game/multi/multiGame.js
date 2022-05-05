@@ -77,50 +77,13 @@ class MultiGame extends React.Component {
                 state: ''
             });
         }
-        Server.receiveOpponentState();
-        EventBus.on('opponentState',(word)=>{
+        Server.receiveOpponentState((word)=>{this.opponentChange(word);});
+        /*EventBus.on('opponentState',(word)=>{
             console.log('Eventbus opponentState');
             this.opponentChange(word);
-        });
-
-
-        //recevice the keyboard keydown to play game
-        EventBus.on("CustomKeyDown", (data) => {
-            //console.log("CustomKeyDown",data);
-            if (data) {
-                if (data.key == 'Backspace') {
-                    if (this.state.current_index > 0) {
-                        this.state.current_index--;
-                        this.updateBlock(this.state.current_row, this.state.current_index, undefined, '');
-                    }
-
-                } else if (data.key == 'Enter') {
-                    if (this.state.current_index >= this.state.letter_count) {
-
-                        if (AllWords.includes(this.getFullWordOfRow(this.state.current_row))) {
-                            this.checkMatchKeyword();
-                        } else {
-                            this.showPopup("The word is not in word list");
-                            console.log("The word is not in word list");
-                        }
-
-                    } else {
-                        this.showPopup("The block is not full-filled");
-                        console.log("The block is not full-filled");
-                    }
-                } else {
-                    if (this.state.current_index <= this.state.letter_count - 1) {
-                        this.updateBlock(this.state.current_row, this.state.current_index, data.key, '');
-                        this.state.current_index++;
-                    }
-                    //console.log("current index: "+this.state.current_index+", row: "+ this.state.current_row);
-                }
-            } else {
-                console.log("data is undefined");
-            }
-
-        });
-
+        });*/
+        this.keyboardInput = this.keyboardInput.bind(this);
+        this.updateBlock = this.updateBlock.bind(this);
     }
     componentWillUnmount(){
         console.log("componentWillUnmount()");
@@ -134,7 +97,46 @@ class MultiGame extends React.Component {
                 userfill:null
             },
         });
+        Server.clearServer();
     }
+
+    //recevice the keyboard keydown to play game
+    keyboardInput(data){
+        //console.log("CustomKeyDown",data);
+        if (data) {
+            if (data.key == 'Backspace') {
+                if (this.state.current_index > 0) {
+                    this.state.current_index--;
+                    this.updateBlock(this.state.current_row, this.state.current_index, undefined, '');
+                }
+
+            } else if (data.key == 'Enter') {
+                if (this.state.current_index >= this.state.letter_count) {
+
+                    if (AllWords.includes(this.getFullWordOfRow(this.state.current_row))) {
+                        this.checkMatchKeyword();
+                    } else {
+                        this.showPopup("The word is not in word list");
+                        console.log("The word is not in word list");
+                    }
+
+                } else {
+                    this.showPopup("The block is not full-filled");
+                    console.log("The block is not full-filled");
+                }
+            } else {
+                if (this.state.current_index <= this.state.letter_count - 1) {
+                    this.updateBlock(this.state.current_row, this.state.current_index, data.key, '');
+                    this.state.current_index++;
+                }
+                //console.log("current index: "+this.state.current_index+", row: "+ this.state.current_row);
+            }
+        } else {
+            console.log("data is undefined");
+        }
+
+    }
+
     //update one block letter and state using row and col
     updateBlock(row, col, letter, state) {
         console.log("updateBlock(" + row + "," + col + ") to " + letter);
@@ -160,11 +162,11 @@ class MultiGame extends React.Component {
 
     //check one row is not match the answer
     checkMatchKeyword() {
-        let row_index = this.state.current_row;
+        var row_index = this.state.current_row;
         
         this.state.current_row++;
         this.state.current_index = 0;
-        let target_row = this.state.userfill[row_index];
+        var target_row = this.state.userfill[row_index];
 
         var correct = 0;
         for (var i = 0; i < this.state.letter_count; i++) {
@@ -178,7 +180,7 @@ class MultiGame extends React.Component {
                 this.updateBlock(row_index, i, target_row[i].letter, 'absent');
             }
         }
-        Server.submitWords(this.getFullStateOfRow(row_index),row_index);
+        Server.submitWords(this.getFullStateOfRow(row_index),row_index,this.state.userfill);
         if(correct >= 5){
             this.props.resultdef(this.getResult(this.state.userfill),
                 this.getResult(this.state.opponent.userfill));
@@ -225,6 +227,9 @@ class MultiGame extends React.Component {
     opponentChange(data){
         console.log('opponentChange',data)
         let row_index = data.row;
+        /*if(data.row > this.state.opponent.current_row){
+            data.row = this.state.opponent.current_row;
+        }*/
         if(data.row == this.state.opponent.current_row){
             this.state.opponent.current_row++;
             var correct = 0;
@@ -385,7 +390,7 @@ class MultiGame extends React.Component {
                         Opponent's
                     </div>
                 </div>
-                <Keyboard game={this} />
+                <Keyboard keyref={this.keyboardInput} />
                 
 
                 <div className='popup-msg'>
@@ -490,6 +495,7 @@ class Room extends React.Component {
 	render() {
 		return (
 			<div>
+                
 				{(this.state.loading || this.state.keyword == undefined) && <div className='loading'>
                         Prepare Room
                         <CircularProgress />
@@ -533,7 +539,7 @@ const GameRoom = ()=>{
         copy.losecount = losecount;
         setAuth(copy);
     }
-    return <Room auth={auth} leaveref={from} updateauthref={updateAuth}/>
+    return <Room key={"room1"} auth={auth} leaveref={from} updateauthref={updateAuth}/>
 }
 
 export default GameRoom;

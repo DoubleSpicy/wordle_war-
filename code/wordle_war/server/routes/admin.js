@@ -14,6 +14,7 @@ const AdminBroOptions = {
     resources: [user,pending_users,resetAccounts],
     rootPath: '/admin',
     branding: {
+      logo: "https://na.cx/i/QpTSmje.png",
       companyName: 'Avalanche',
       softwareBrothers: false,   // if Software Brothers logos should be shown in the sidebar footer
     },
