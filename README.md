@@ -1,8 +1,10 @@
-# Project Avalanche
-A simple online multiplayer wordle game with elo system!.
+# Wordle War!
 
 ## Introduction
-![Screenshot](https://github.com/DoubleSpicy/wordle_war-/blob/main/documentations/screenshot.PNG?raw=true)
+A simple online multiplayer wordle game with elo system!.
+
+## Gameplay
+![Screenshot](https://github.com/DoubleSpicy/wordle_war-/blob/main/documentations/gameplay.gif?raw=true)
 
 ## Architecture
 ![Architecture](https://github.com/DoubleSpicy/wordle_war-/blob/main/documentations/frameworks_used.png?raw=true)
