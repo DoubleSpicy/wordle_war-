@@ -1,5 +1,9 @@
 # Wordle War!
 
+![Downloads](https://img.shields.io/github/issues/DoubleSpicy/wordle_war-)
+![forks](https://img.shields.io/github/forks/DoubleSpicy/wordle_war-)
+![stars](https://img.shields.io/github/stars/DoubleSpicy/wordle_war-)
+
 ## Introduction
 A simple online multiplayer wordle game with elo system!.
 
